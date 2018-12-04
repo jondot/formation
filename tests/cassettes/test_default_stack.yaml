@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.20.1]
+      x-request-id: [aa0dfd27-0897-4f9f-bede-1c25fc3c7ba1]
+    method: GET
+    uri: http://example.com/
+  response:
+    body:
+      string: !!binary |
+        H4sIADuBBVIAA41UQa/TMAy+71eYcgFpXfeAB1PXViBA4gIc4MIxa9zVWpOUJO02offfcdu9ruXt
+        QCu1jh1//mzHSZ5Jk/tzjVB6VWWL5PGHQmYL4Cfx5CvMPp+EqiuET0YJ0kk0aBfDFoVeQF4K69Cn
+        QeOLcBNAlE2Mpfd1iL8batPgo9EetQ+7sAHkwyoNPJ581IXfjlC3kLRQmAYt4bE21k/8jyR9mUps
+        KcewXyyBNHkSVehyUWF6d4Vy/szJdAwugXPngsG2M/IMf3qxX4r8sLem0TLMTWVsDM+LNb+vtuMW
+        JeyedAzrq6oWUpLez3QFMw0Loag6xxB8r1HDD6FdsITgC1YtesoFfMMGWTMqlvDBcgZLcLw1dGip
+        uCL2wkP/ldROSPfpx/B2va5PT3neowLReHOD7v3M4VbuxST+zliJNrRCUuNiuEO1nVAScUX6sOR/
+        S448ygnBR7jXmzebzQSx60UoMTdWeDLMVRuNU9D3CiUJeKHEKbxk+a7L8uW0ZfMO/k8mD6M0L+Sk
+        mPOKzfp+w/ZPadZz61jvsWRXEsM3ifojmnXyIomGeVwkXWo8nkzycpDLuyejyarBVmc/S3Igez2w
+        hM6LXUWu5F54AzuExrFYGAtUVY3zXdVbBBwQHc8Pe+eN4gFzK/hlGs753DmBZ+Th4F3Q9dXrSL40
+        jYfaEiPnhktBuu8n8Fq4A6feB63RKnKODaskqkfWCd8XFos06G6NOIqOx+OKhBYrY/fREM9Fl2hB
+        9tVY5PCMp/oYqxWDiawHTKK+Ukl0qVs0XG9/AQiVqov2BAAA
+    headers:
+      cache-control: [max-age=604800]
+      content-encoding: [gzip]
+      content-length: ['606']
+      content-type: [text/html; charset=UTF-8]
+      date: ['Tue, 04 Dec 2018 13:49:48 GMT']
+      etag: ['"1541025663+gzip"']
+      expires: ['Tue, 11 Dec 2018 13:49:48 GMT']
+      last-modified: ['Fri, 09 Aug 2013 23:54:35 GMT']
+      server: [ECS (dca/24AA)]
+      vary: [Accept-Encoding]
+      x-cache: [HIT]
+    status: {code: 200, message: OK}
+version: 1

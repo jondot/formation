@@ -1,6 +1,5 @@
 from formation import wrap
-from datetime import datetime
-from formation import wrap
+import pytest
 from requests import get
 
 
@@ -24,6 +23,7 @@ def call_google(ctx={}):
     return ctx
 
 
+@pytest.mark.vcr()
 def test_formation(snapshot):
     fancy_caller = wrap(call_google, middleware=[log, status_code])
     ctx = fancy_caller({})
@@ -33,4 +33,3 @@ def test_formation(snapshot):
             "status_from_request": ctx["res"].status_code,
         }
     )
-

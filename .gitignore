@@ -7,3 +7,4 @@ __pycache__
 .testmondata
 *.pyc
 formation.egg-info/
+yarn-error.log
