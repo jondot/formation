@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "formation"
-version = "0.1.14"
+version = "0.1.15"
 authors = ["Dotan Nahum <jondotan@gmail.com>"]
 description = "A generic functional middleware infrastructure for Python."
 

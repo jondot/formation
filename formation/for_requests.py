@@ -29,6 +29,7 @@ def build_sender(middleware=[]):
     return sender
 
 
+# TODO: pass more requests vars via req (e.g. timeout, retry)
 def requests_adapter(ctx):
     req = ctx[_REQ_HTTP]
     meth = getattr(requests, req.method.lower())
