@@ -164,7 +164,6 @@ def create_circuit_breaker(logger, name):
 
         if breaker.current_state == "open":
             log.info("circuitbreaker.middleware.open", name=breaker.name)
-            return ctx
 
         call = breaker(call)
 
@@ -172,7 +171,7 @@ def create_circuit_breaker(logger, name):
             ctx = call(ctx)
             return ctx
         except pybreaker.CircuitBreakerError:
-            pass
+            return ctx
 
     return circuit_breaker
 
