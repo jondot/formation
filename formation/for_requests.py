@@ -2,7 +2,7 @@ import requests
 from .formation import wrap, _REQ_HTTP, _RES_HTTP, _SESSION
 from attr import attrib, attrs, fields, asdict
 
-__all__ = ["build_sender"]
+__all__ = ["build_sender", "build"]
 
 
 @attrs
@@ -27,6 +27,31 @@ def build_sender(middleware=[]):
         return ctx[_RES_HTTP]
 
     return sender
+
+
+def build(middleware=[]):
+    class Sender(object):
+        def __init__(self):
+            self.send = build_sender(middleware)
+
+        def send(self, url, session_context={}, **kwargs):
+            ctx = {
+                _REQ_HTTP: FormationHttpRequest(url=url, method="get", **kwargs),
+                _SESSION: session_context,
+            }
+            ctx = self.wrapped(ctx)
+            return ctx[_RES_HTTP]
+
+        def get(self, url, **kwargs):
+            return self.send("get", url, **kwargs)
+
+        def post(self, url, **kwargs):
+            return self.send("post", url, **kwargs)
+
+        def put(self, url, **kwargs):
+            return self.send("put", url, **kwargs)
+
+    return Sender
 
 
 # TODO: pass more requests vars via req (e.g. timeout, retry)
