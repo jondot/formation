@@ -1,8 +1,39 @@
 import requests
+from requests.compat import urljoin
 from .formation import wrap, _REQ_HTTP, _RES_HTTP, _SESSION
-from attr import attrib, attrs, fields, asdict
+from attr import attrib, attrs
+import datetime
 
-__all__ = ["build_sender", "build"]
+__all__ = ["build_sender", "build", "client"]
+
+
+def client(cls=None):
+    def client_decorator(cls):
+        original_init = cls.__init__
+
+        def now_iso(self):
+            return datetime.datetime.utcnow().isoformat()
+
+        def path(self, p):
+            return requests.compat.urljoin(self.base_uri, p)
+
+        def init(self, *args, **kwargs):
+            original_init(self, *args, **kwargs)
+            base_uri = kwargs.get("base_uri", self.__class__.base_uri)
+            self.request = build(
+                middleware=kwargs.get("middleware", self.__class__.middleware),
+                base_uri=base_uri,
+            )
+            self.base_uri = base_uri
+
+        cls.path = path
+        cls.now_iso = now_iso
+        cls.__init__ = init
+        return cls
+
+    if cls:
+        return client_decorator(cls)
+    return client_decorator
 
 
 @attrs
@@ -15,12 +46,14 @@ class FormationHttpRequest(object):
     data = attrib(default=None)
 
 
-def build_sender(middleware=[]):
+def build_sender(middleware=[], base_uri=None):
     wrapped = wrap(requests_adapter, middleware=middleware)
 
     def sender(method, url, session_context={}, **kwargs):
         ctx = {
-            _REQ_HTTP: FormationHttpRequest(url=url, method=method, **kwargs),
+            _REQ_HTTP: FormationHttpRequest(
+                url=urljoin(base_uri, url), method=method, **kwargs
+            ),
             _SESSION: session_context,
         }
         ctx = wrapped(ctx)
@@ -29,29 +62,22 @@ def build_sender(middleware=[]):
     return sender
 
 
-def build(middleware=[]):
-    class Sender(object):
-        def __init__(self):
-            self.send = build_sender(middleware)
+class Sender(object):
+    def __init__(self, send):
+        self.send = send
 
-        def send(self, url, session_context={}, **kwargs):
-            ctx = {
-                _REQ_HTTP: FormationHttpRequest(url=url, method="get", **kwargs),
-                _SESSION: session_context,
-            }
-            ctx = self.wrapped(ctx)
-            return ctx[_RES_HTTP]
+    def get(self, path, **kwargs):
+        return self.send("get", path, **kwargs)
 
-        def get(self, url, **kwargs):
-            return self.send("get", url, **kwargs)
+    def post(self, path, **kwargs):
+        return self.send("post", path, **kwargs)
 
-        def post(self, url, **kwargs):
-            return self.send("post", url, **kwargs)
+    def put(self, path, **kwargs):
+        return self.send("put", path, **kwargs)
 
-        def put(self, url, **kwargs):
-            return self.send("put", url, **kwargs)
 
-    return Sender
+def build(middleware=[], base_uri=None):
+    return Sender(build_sender(middleware=middleware, base_uri=base_uri))
 
 
 # TODO: pass more requests vars via req (e.g. timeout, retry)
