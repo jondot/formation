@@ -13,4 +13,4 @@ install:
   - pip install poetry
   - poetry install
 
-script: poetry run pytest
+script: make test

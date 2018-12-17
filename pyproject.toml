@@ -15,7 +15,7 @@ documentation = "https://github.com/jondot/formation"
 keywords = ["flask", "django", "requests", "middleware", "functional"]
 
 [tool.poetry.dependencies]
-python = "*"
+python = "^2.7 || ^3.4"
 toolz = "^0.9.0"
 cytoolz = "^0.9.0"
 requests = "^2.20"
@@ -23,6 +23,8 @@ attrs = "^18.2"
 pybreaker = "^0.4.5"
 
 [tool.poetry.dev-dependencies]
+pytest-cov = "^2.6"
+pytest-sugar = "^0.9.2"
 boltons = "^18.0"
 pytest = "^3.0"
 pytest-benchmark = "^3.1"
@@ -30,8 +32,8 @@ pytest-testmon = "^0.9.13"
 pytest-watch = "^4.2"
 snapshottest = "^0.5.0"
 
-flake8 = { version = "^3.5", optional = true }
-flake8-mypy = { version = "^17.8", optional = true }
+flake8 = { version = "^3.5" }
+flake8-mypy = { version = "^17.8", optional=true }
 requests = "^2.20"
 pytest-vcr = "^1.0"
 
