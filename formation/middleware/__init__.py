@@ -1,15 +1,13 @@
-from .breaker import create_circuit_breaker
-from .context import create_context
-from .logger import create_request_logger
-from .request_duration import create_request_duration
-from .request_id import create_request_id
-from .retry import retry
+from .breaker import circuit_breaker, trigger_breaker_if  # noqa
+from .context import context
+from .logger import request_logger
+from .request_duration import request_duration
+from .request_id import request_id
+from .retry import retry  # noqa
+from .ua import ua  # noqa
+from .accept import accept  # noqa
+from .timeout import timeout  # noqa
 
 
 def default_stack(logger):
-    return [
-        create_request_id(),
-        create_context(),
-        create_request_duration(),
-        create_request_logger(logger),
-    ]
+    return [request_id(), context(), request_duration(), request_logger(logger)]

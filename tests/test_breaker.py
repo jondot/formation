@@ -1,5 +1,5 @@
 from .utils import DummyLogger
-from formation.middleware import create_circuit_breaker
+from formation.middleware import circuit_breaker
 
 
 def malfunction(ctx):
@@ -9,13 +9,13 @@ def malfunction(ctx):
 def force_run(cb):
     try:
         cb({}, malfunction)
-    except:
+    except:  # noqa
         pass
 
 
 def test_circuit_breaker_middleware(snapshot):
     logger = DummyLogger()
-    cb = create_circuit_breaker(logger, "test-cb")
+    cb = circuit_breaker(logger, "test-cb")
     force_run(cb)
     force_run(cb)
     force_run(cb)

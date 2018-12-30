@@ -2,10 +2,10 @@ from ..formation import _REQ_HTTP, _RES_HTTP, _CONTEXT, _REQ_DURATION
 from toolz.curried import valfilter
 
 
-def create_request_logger(logger):
+def request_logger(logger):
     no_nones = valfilter(lambda x: x)
 
-    def request_logger(ctx, next):
+    def request_logger_middleware(ctx, next):
         req = ctx[_REQ_HTTP]
         context = ctx.get(_CONTEXT, {})
         msg = "request.http"
@@ -31,4 +31,4 @@ def create_request_logger(logger):
         log.debug(msg, headers=res.headers)
         return ctx
 
-    return request_logger
+    return request_logger_middleware

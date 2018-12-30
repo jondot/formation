@@ -32,7 +32,7 @@ def get_context(
     }
 
 
-def create_context(
+def context(
     context_fn=get_context,
     namespace="service",
     scope="all",
@@ -42,7 +42,7 @@ def create_context(
     getpid=os.getpid,
     gettid=thread.get_ident,
 ):
-    def context(ctx, call):
+    def context_middleware(ctx, call):
         request_id = ctx[_REQ_ID]
         request_parent_id = ctx.get(_REQ_PARENT_ID, None)
         uid = get_in([_SESSION, _UID], None)
@@ -61,4 +61,4 @@ def create_context(
         ctx = call(ctx)
         return ctx
 
-    return context
+    return context_middleware
