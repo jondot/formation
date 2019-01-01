@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Context Logger · GitBook</title>
+        <title>User Agent · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="duration.html" />
     
-    
-    <link rel="prev" href="context.html" />
+    <link rel="prev" href="timeout.html" />
     
 
     </head>
@@ -170,7 +168,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="context_logger.html">
+        <li class="chapter " data-level="3.4" data-path="context_logger.html">
             
                 <a href="context_logger.html">
             
@@ -248,7 +246,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.10" data-path="ua.html">
+        <li class="chapter active" data-level="3.10" data-path="ua.html">
             
                 <a href="ua.html">
             
@@ -291,7 +289,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Context Logger</a>
+        <a href=".." >User Agent</a>
     </h1>
 </div>
 
@@ -306,16 +304,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="context-logger">Context Logger</h1>
-<p>A general logger middleware for anything with context. Will log context created by the <a href="context.html">context</a> middleware.</p>
+                                <h1 id="user-agent">User Agent</h1>
+<p>Sets <code>User-Agent</code> in request.</p>
 <p><em>Usage:</em></p>
-<pre><code class="lang-py"><span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> context_logger
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> ua
 
 <span class="hljs-meta">@client</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Google</span><span class="hljs-params">(object)</span>:</span>
     base_uri = <span class="hljs-string">&quot;https://google.com&quot;</span>
     middleware=[
-        context_logger(structlog.getLogger())
+        ua(<span class="hljs-string">&apos;super-client/1.0&apos;</span>)
     ]
     ...
 </code></pre>
@@ -346,14 +344,10 @@
 
             
                 
-                <a href="context.html" class="navigation navigation-prev " aria-label="Previous page: Context">
+                <a href="timeout.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Timeout">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="duration.html" class="navigation navigation-next " aria-label="Next page: Request Duration">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -362,7 +356,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Context Logger","level":"3.4","depth":1,"next":{"title":"Request Duration","level":"3.5","depth":1,"path":"middleware/duration.md","ref":"middleware/duration.md","articles":[]},"previous":{"title":"Context","level":"3.3","depth":1,"path":"middleware/context.md","ref":"middleware/context.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary"],"root":"content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"middleware/context_logger.md","mtime":"2019-01-01T08:33:31.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-01T20:08:59.363Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"User Agent","level":"3.10","depth":1,"previous":{"title":"Timeout","level":"3.9","depth":1,"path":"middleware/timeout.md","ref":"middleware/timeout.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary"],"root":"content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"middleware/ua.md","mtime":"2019-01-01T20:12:46.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-01T20:20:20.476Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

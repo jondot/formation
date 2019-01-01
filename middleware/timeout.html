@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Context · GitBook</title>
+        <title>Timeout · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="context_logger.html" />
+    <link rel="next" href="ua.html" />
     
     
-    <link rel="prev" href="breaker.html" />
+    <link rel="prev" href="retry.html" />
     
 
     </head>
@@ -157,7 +157,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3" data-path="context.html">
+        <li class="chapter " data-level="3.3" data-path="context.html">
             
                 <a href="context.html">
             
@@ -235,7 +235,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.9" data-path="timeout.html">
+        <li class="chapter active" data-level="3.9" data-path="timeout.html">
             
                 <a href="timeout.html">
             
@@ -291,7 +291,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Context</a>
+        <a href=".." >Timeout</a>
     </h1>
 </div>
 
@@ -306,57 +306,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="context">Context</h1>
-<p>General request context collection. Collects data points like thread ID, process ID, and so on, for common middleware usage.</p>
-<p><em>Api:</em></p>
-<pre><code class="lang-py"><span class="hljs-comment"># all params come with defaults</span>
-context(
-    namespace=<span class="hljs-string">&quot;service&quot;</span>,
-    scope=<span class="hljs-string">&quot;all&quot;</span>,
-    env=<span class="hljs-string">&quot;local&quot;</span>,
-    sha=<span class="hljs-string">&quot;dev&quot;</span>,
-    version=<span class="hljs-string">&quot;0.01&quot;</span>,
-    context_fn=get_context,
-    getpid=os.getpid,
-    gettid=thread.get_ident,
+                                <h1 id="timeout">Timeout</h1>
+<p>Set a timeout on a request (HTTP).</p>
+<p><em>API:</em></p>
+<pre><code class="lang-py"><span class="hljs-comment"># all params have default values</span>
+timeout(
+    timeout=<span class="hljs-keyword">None</span>
 )
 </code></pre>
-<p><em>Context:</em></p>
-<ul>
-<li><code>v</code> - Logical product version</li>
-<li><code>sha</code> - Physical source tree version (e.g. Git SHA)</li>
-<li><code>env</code> - Development environment</li>
-<li><code>pid</code> - Process ID of current process running request</li>
-<li><code>tid</code> - Thread ID of current thread running request</li>
-<li><code>uid</code> - User ID for the current request</li>
-<li><code>scope</code> - Scope, i.e. module name</li>
-<li><code>ns</code> - Namespace, i.e. product name</li>
-<li><code>rid</code> - Request ID for correlation</li>
-<li><code>rid_p</code> - Parent request ID for correlation,</li>
-</ul>
 <p><em>Usage:</em></p>
-<pre><code class="lang-py"><span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> context
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> timeout
 
 <span class="hljs-meta">@client</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Google</span><span class="hljs-params">(object)</span>:</span>
     base_uri = <span class="hljs-string">&quot;https://google.com&quot;</span>
     middleware=[
-        context(
-            namespace=<span class="hljs-string">&quot;acme&quot;</span>
-            scope=<span class="hljs-string">&quot;billing&quot;</span>
-        )
+        timeout(<span class="hljs-number">0.3</span>) <span class="hljs-comment"># 300ms</span>
     ]
     ...
-</code></pre>
-<p><em>Accessing context from your middleware:</em></p>
-<pre><code class="lang-py"><span class="hljs-keyword">from</span> formation <span class="hljs-keyword">import</span> _CONTEXT
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_mware</span><span class="hljs-params">(mime_type)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_mware_middleware</span><span class="hljs-params">(ctx, call)</span>:</span>
-        c = ctx.get(_CONTEXT)
-        print(c)
-        <span class="hljs-keyword">return</span> call(ctx)
-
-    <span class="hljs-keyword">return</span> my_mware_middleware
 </code></pre>
 
                                 
@@ -385,12 +352,12 @@ context(
 
             
                 
-                <a href="breaker.html" class="navigation navigation-prev " aria-label="Previous page: Circuit Breaker">
+                <a href="retry.html" class="navigation navigation-prev " aria-label="Previous page: Retry">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="context_logger.html" class="navigation navigation-next " aria-label="Next page: Context Logger">
+                <a href="ua.html" class="navigation navigation-next " aria-label="Next page: User Agent">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -401,7 +368,7 @@ context(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Context","level":"3.3","depth":1,"next":{"title":"Context Logger","level":"3.4","depth":1,"path":"middleware/context_logger.md","ref":"middleware/context_logger.md","articles":[]},"previous":{"title":"Circuit Breaker","level":"3.2","depth":1,"path":"middleware/breaker.md","ref":"middleware/breaker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary"],"root":"content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"middleware/context.md","mtime":"2019-01-01T08:30:42.247Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-01T20:08:59.363Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Timeout","level":"3.9","depth":1,"next":{"title":"User Agent","level":"3.10","depth":1,"path":"middleware/ua.md","ref":"middleware/ua.md","articles":[]},"previous":{"title":"Retry","level":"3.8","depth":1,"path":"middleware/retry.md","ref":"middleware/retry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary"],"root":"content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"middleware/timeout.md","mtime":"2019-01-01T20:12:46.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-01T20:20:20.476Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
