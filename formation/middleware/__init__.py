@@ -1,5 +1,6 @@
 from .breaker import circuit_breaker, trigger_breaker_if  # noqa
 from .context import context
+from .context_logger import context_logger  # noqa
 from .logger import request_logger
 from .request_duration import request_duration
 from .request_id import request_id

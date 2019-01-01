@@ -43,7 +43,7 @@ def context(
     gettid=thread.get_ident,
 ):
     def context_middleware(ctx, call):
-        request_id = ctx[_REQ_ID]
+        request_id = ctx.get(_REQ_ID, None)
         request_parent_id = ctx.get(_REQ_PARENT_ID, None)
         uid = get_in([_SESSION, _UID], None)
 

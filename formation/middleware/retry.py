@@ -8,7 +8,7 @@ def retry(max_retries=3):
             return res
         except Exception as ex:
             retries = ctx.get(_RETRY, 0)
-            if retries > max_retries:
+            if retries >= max_retries - 1:
                 raise ex
             ctx[_RETRY] = 1 + retries
             # TODO exponential backoff
