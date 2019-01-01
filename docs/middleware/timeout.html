@@ -1,0 +1,407 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Timeout · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ua.html" />
+    
+    
+    <link rel="prev" href="retry.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">formation</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../formation/for-requests.html">
+            
+                <a href="../formation/for-requests.html">
+            
+                    
+                    For Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">media</li>
+        
+        
+    
+
+    
+        
+        <li class="header">middleware</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="accept.html">
+            
+                <a href="accept.html">
+            
+                    
+                    Accept
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="breaker.html">
+            
+                <a href="breaker.html">
+            
+                    
+                    Circuit Breaker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="context.html">
+            
+                <a href="context.html">
+            
+                    
+                    Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="context_logger.html">
+            
+                <a href="context_logger.html">
+            
+                    
+                    Context Logger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="duration.html">
+            
+                <a href="duration.html">
+            
+                    
+                    Request Duration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="logger.html">
+            
+                <a href="logger.html">
+            
+                    
+                    Request Logger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="request_id.html">
+            
+                <a href="request_id.html">
+            
+                    
+                    Request ID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="retry.html">
+            
+                <a href="retry.html">
+            
+                    
+                    Retry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.9" data-path="timeout.html">
+            
+                <a href="timeout.html">
+            
+                    
+                    Timeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="ua.html">
+            
+                <a href="ua.html">
+            
+                    
+                    User Agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Timeout</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="timeout">Timeout</h1>
+<p>Set a timeout on a request (HTTP).</p>
+<p><em>API:</em></p>
+<pre><code class="lang-py"><span class="hljs-comment"># all params have default values</span>
+timeout(
+    timeout=<span class="hljs-keyword">None</span>
+)
+</code></pre>
+<p><em>Usage:</em></p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> timeout
+
+<span class="hljs-meta">@client</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Google</span><span class="hljs-params">(object)</span>:</span>
+    base_uri = <span class="hljs-string">&quot;https://google.com&quot;</span>
+    middleware=[
+        timeout(<span class="hljs-number">0.3</span>) <span class="hljs-comment"># 300ms</span>
+    ]
+    ...
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="retry.html" class="navigation navigation-prev " aria-label="Previous page: Retry">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ua.html" class="navigation navigation-next " aria-label="Next page: User Agent">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Timeout","level":"3.9","depth":1,"next":{"title":"User Agent","level":"3.10","depth":1,"path":"middleware/ua.md","ref":"middleware/ua.md","articles":[]},"previous":{"title":"Retry","level":"3.8","depth":1,"path":"middleware/retry.md","ref":"middleware/retry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary"],"root":"content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"middleware/timeout.md","mtime":"2019-01-01T08:31:00.673Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-01T20:08:59.363Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
