@@ -15,6 +15,7 @@ from uuid import uuid4
 from toolz.curried import valfilter, get_in
 import pybreaker
 import os
+import socket
 
 
 def default_stack(logger):
@@ -90,6 +91,8 @@ def create_context(
         request_id = ctx[_REQ_ID]
         request_parent_id = ctx.get(_REQ_PARENT_ID, None)
         uid = get_in([_SESSION, _UID], None)
+        host_name = socket.gethostname()
+        host_ip = socket.gethostbyname(host_name)
 
         ctx[_CONTEXT] = context_fn(
             env=env,
@@ -101,6 +104,8 @@ def create_context(
             uid=uid,
             getpid=getpid,
             gettid=gettid,
+            machine_name=host_name,
+            machine_ip=host_ip
         )
         ctx = call(ctx)
         return ctx
