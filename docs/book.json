@@ -1,0 +1,6 @@
+{
+  "root": "content",
+  "plugins": [
+    "summary"
+  ]
+}

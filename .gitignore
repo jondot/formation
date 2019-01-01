@@ -10,3 +10,5 @@ formation.egg-info/
 yarn-error.log
 .coverage
 cov.xml
+node_modules/
+_book/

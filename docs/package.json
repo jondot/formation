@@ -1,0 +1,10 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-summary": "^1.0.0"
+  }
+}
