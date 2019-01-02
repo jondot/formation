@@ -1,8 +1,13 @@
+---
+id: request-id
+sidebar_label: Request ID
+hide_title: true
+---
 # Request ID
 
 Sets request ID in request. Useful for correlating many requests in a distributed system via centralized logging search system (e.g. Splunk, ELK, Graylog).
 
-_API:_
+## API
 
 ```py
 # all params have default values
@@ -15,7 +20,7 @@ request_id(
 * `key` will appear as an HTTP request header
 * You can swap an ID generation function with `idgen`
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import request_id

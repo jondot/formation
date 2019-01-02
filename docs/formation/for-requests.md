@@ -1,4 +1,9 @@
-# For Requests
+---
+id: for-requests
+sidebar_label: Using Formation with Requests
+hide_title: true
+---
+# Using Formation with Requests
 
 While Formation was created as a _generic_ middleware infrastructure, it has special support for [requests](https://github.com/requests/requests).
 

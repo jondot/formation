@@ -1,0 +1,20 @@
+{
+  "docs": {
+    "Introduction": [
+      "docs",
+      "formation/for-requests"
+    ],
+    "Middleware": [
+      "middleware/middleware-accept",
+      "middleware/breaker",
+      "middleware/context-logger",
+      "middleware/context",
+      "middleware/duration",
+      "middleware/logger",
+      "middleware/request-id",
+      "middleware/retry",
+      "middleware/timeout",
+      "middleware/ua"
+    ]
+  }
+}

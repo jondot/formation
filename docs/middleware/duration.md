@@ -1,9 +1,14 @@
+---
+id: duration
+sidebar_label: Duration
+hide_title: true
+---
 # Request Duration
 
 Sets request duration in context for other middleware to use down the pipeline. See [logger](logger.md) for how it's being used.
 
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import request_duration

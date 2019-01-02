@@ -1,8 +1,13 @@
+---
+id: context
+sidebar_label: Context
+hide_title: true
+---
 # Context
 
 General request context collection. Collects data points like thread ID, process ID, and so on, for common middleware usage.
 
-_Api:_
+## API
 
 ```py
 # all params come with defaults
@@ -32,7 +37,7 @@ _Context:_
 * `rid_p` - Parent request ID for correlation,
 
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import context

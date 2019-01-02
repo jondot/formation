@@ -1,9 +1,14 @@
+---
+id: timeout
+sidebar_label: Timeout
+hide_title: true
+---
 # Timeout
 
 Set a timeout on a request (HTTP).
 
 
-_API:_
+## API
 
 ```py
 # all params have default values
@@ -12,7 +17,7 @@ timeout(
 )
 ```
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import timeout

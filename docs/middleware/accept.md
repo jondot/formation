@@ -1,8 +1,13 @@
+---
+id: accept
+sidebar_label: Accept
+hide_title: true
+---
 # Accept
 
 Sets `Content-Type` in request.
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import accept

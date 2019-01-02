@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>formation@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="formation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(10.000000, 10.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <polygon id="Triangle" points="118 0 152 68 84 68"></polygon>
+            <polygon id="Triangle-Copy" points="34 70 68 138 0 138"></polygon>
+            <polygon id="Triangle-Copy-2" points="202 70 236 138 168 138"></polygon>
+        </g>
+    </g>
+</svg>

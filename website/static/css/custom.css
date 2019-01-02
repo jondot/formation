@@ -1,0 +1,47 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #565660;
+}
+h1{
+    font-weight: 200;
+}
+h2 {
+    font-weight: normal;
+}
+.projectTitle > small{
+    font-weight: inherit;
+}
+article h1:first-child {
+    margin-top: 0;
+}
+article h1, article h2{
+    margin: 3em 0 2em 0;
+
+}
+/* your custom css */
+
+.fixedHeaderContainer{
+    background: #fff;
+    padding: 2em 0;
+}
+.navPusher{
+    padding-top: 6em;
+}
+.fixedHeaderContainer *, .navigationSlider .slidingNav ul li a{
+    border-radius: 4px;
+}
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}

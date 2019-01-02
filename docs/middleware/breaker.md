@@ -1,8 +1,13 @@
+---
+id: breaker
+sidebar_label: Circuit Breaker
+hide_title: true
+---
 # Circuit Breaker
 
 A general logger middleware for requests. Will log context created by the [context](context.md) middleware.
 
-_API:_
+## API
 
 ```py
 def circuit_breaker(
@@ -17,7 +22,8 @@ def circuit_breaker(
 
 For detailed information about the above parameters, see [pybreaker](https://github.com/danielfm/pybreaker).
 
-_Usage:_
+
+## Usage
 
 ```py
 from formation.for_requests import client

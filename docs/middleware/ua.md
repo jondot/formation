@@ -1,8 +1,13 @@
+---
+id: user-agent
+sidebar_label: User Agent
+hide_title: true
+---
 # User Agent
 
 Sets `User-Agent` in request.
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import ua

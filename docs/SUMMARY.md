@@ -3,9 +3,6 @@
 
 - [For Requests](formation/for-requests.md)
 
-## media
-
-
 ## middleware
 
 - [Accept](middleware/accept.md)

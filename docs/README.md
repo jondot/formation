@@ -1,10 +1,21 @@
-![](media/cover.png)
+---
+id: docs
+sidebar_label: About Formation
+hide_title: true
+---
 
-# Formation
+# About Formation
 
-A generic functional middleware infrastructure for Python.
 
-Take a look:
+Formation is a generic functional middleware infrastructure for Python. With it, you compose a stack of middleware, each of which has a tiny API, a shared context, and an ability to cancel or proceed to the next middleware.
+
+In many ways, it is similar to Ruby's [Rack](https://rack.github.io/) middleware, and Node's [connect](https://github.com/senchalabs/connect). In the context of Python, it is a higher-level abstraction over WSGI.
+
+Formation is not Pythonic, and it doesn't abide to the _Zen of Python_, where suitable it does away with these, and optimizes for developer happiness.
+
+## As a Generic Middleware Infra
+
+It can be used for any Python codebase and purpose:
 
 ```py
 from datetime.datetime import now
@@ -30,6 +41,8 @@ def to_requests(ctx):
 fancy_get = wrap(to_requests, middleware=[log, timeit])
 fancy_get({'url':'https://google.com'})
 ```
+
+## In Use with Requests
 
 Or, using `formation.for_requests` for the requests HTTP lib:
 

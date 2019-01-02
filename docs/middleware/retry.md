@@ -1,8 +1,13 @@
+---
+id: retry
+sidebar_label: Retry
+hide_title: true
+---
 # Retry
 
 A generic retry policy middleware (not specific to network requests). Will retry upon exception until meeting a `max_retries` threshold.
 
-_API:_
+## API
 
 ```py
 # all params have default values
@@ -11,7 +16,7 @@ retry(
 )
 ```
 
-_Usage:_
+## Usage
 
 ```py
 from formation.middleware import retry
