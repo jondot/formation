@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>middleware/context · Formation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;context&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#context&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context&lt;/h1&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="middleware/context · Formation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jondot.github.io/formation/index.html"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;context&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#context&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context&lt;/h1&gt;
+"/><meta property="og:image" content="https://jondot.github.io/formation/img/cover.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://jondot.github.io/formation/img/cover.png"/><link rel="shortcut icon" href="/formation/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-7131053-27', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/formation/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/formation/"><img class="logo" src="/formation/img/formation.svg" alt="Formation"/><h2 class="headerTitleWithLogo">Formation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/formation/docs/docs" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Middleware</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/formation/docs/docs">About Formation</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/formation/for-requests">Using Formation with Requests</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Middleware</h3><ul><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/breaker">Circuit Breaker</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/context-logger">Context Logger</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/formation/docs/middleware/context">Context</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/duration">Duration</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/request-id">Request ID</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/retry">Retry</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/timeout">Timeout</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="context"></a><a href="#context" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Context</h1>
+<p>General request context collection. Collects data points like thread ID, process ID, and so on, for common middleware usage.</p>
+<h2><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h2>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># all params come with defaults</span>
+context(
+    namespace=<span class="hljs-string">"service"</span>,
+    scope=<span class="hljs-string">"all"</span>,
+    env=<span class="hljs-string">"local"</span>,
+    sha=<span class="hljs-string">"dev"</span>,
+    version=<span class="hljs-string">"0.01"</span>,
+    context_fn=get_context,
+    getpid=os.getpid,
+    gettid=thread.get_ident,
+)
+</code></pre>
+<p><em>Context:</em></p>
+<ul>
+<li><code>v</code> - Logical product version</li>
+<li><code>sha</code> - Physical source tree version (e.g. Git SHA)</li>
+<li><code>env</code> - Development environment</li>
+<li><code>pid</code> - Process ID of current process running request</li>
+<li><code>tid</code> - Thread ID of current thread running request</li>
+<li><code>uid</code> - User ID for the current request</li>
+<li><code>scope</code> - Scope, i.e. module name</li>
+<li><code>ns</code> - Namespace, i.e. product name</li>
+<li><code>rid</code> - Request ID for correlation</li>
+<li><code>rid_p</code> - Parent request ID for correlation,</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<pre><code class="hljs css language-py"><span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> context
+
+<span class="hljs-meta">@client</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Google</span><span class="hljs-params">(object)</span>:</span>
+    base_uri = <span class="hljs-string">"https://google.com"</span>
+    middleware=[
+        context(
+            namespace=<span class="hljs-string">"acme"</span>
+            scope=<span class="hljs-string">"billing"</span>
+        )
+    ]
+    ...
+</code></pre>
+<p><em>Accessing context from your middleware:</em></p>
+<pre><code class="hljs css language-py"><span class="hljs-keyword">from</span> formation <span class="hljs-keyword">import</span> _CONTEXT
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_mware</span><span class="hljs-params">(mime_type)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_mware_middleware</span><span class="hljs-params">(ctx, call)</span>:</span>
+        c = ctx.get(_CONTEXT)
+        print(c)
+        <span class="hljs-keyword">return</span> call(ctx)
+
+    <span class="hljs-keyword">return</span> my_mware_middleware
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/formation/docs/middleware/context-logger"><span class="arrow-prev">← </span><span>Context Logger</span></a><a class="docs-next button" href="/formation/docs/middleware/duration"><span>Duration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#api">API</a></li><li><a href="#usage">Usage</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/formation/" class="nav-home"><img src="/formation/img/formation-inv.svg" alt="Formation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/formation/docs/en/docs/docs.html">Getting Started</a><a href="/formation/docs/en/middleware/breaker.html">Guides (or other categories)</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/formation" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/jondot" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jondot/formation">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/jondot/formation/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Dotan Nahum</section></footer></div></body></html>

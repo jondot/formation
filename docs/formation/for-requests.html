@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>formation/for-requests · Formation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;using-formation-with-requests&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#using-formation-with-requests&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Using Formation with Requests&lt;/h1&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="formation/for-requests · Formation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jondot.github.io/formation/index.html"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;using-formation-with-requests&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#using-formation-with-requests&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Using Formation with Requests&lt;/h1&gt;
+"/><meta property="og:image" content="https://jondot.github.io/formation/img/cover.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://jondot.github.io/formation/img/cover.png"/><link rel="shortcut icon" href="/formation/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-7131053-27', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/formation/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/formation/"><img class="logo" src="/formation/img/formation.svg" alt="Formation"/><h2 class="headerTitleWithLogo">Formation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/formation/docs/docs" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Introduction</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/formation/docs/docs">About Formation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/formation/docs/formation/for-requests">Using Formation with Requests</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Middleware</h3><ul><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/breaker">Circuit Breaker</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/context-logger">Context Logger</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/context">Context</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/duration">Duration</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/request-id">Request ID</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/retry">Retry</a></li><li class="navListItem"><a class="navItem" href="/formation/docs/middleware/timeout">Timeout</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="using-formation-with-requests"></a><a href="#using-formation-with-requests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Formation with Requests</h1>
+<p>While Formation was created as a <em>generic</em> middleware infrastructure, it has special support for <a href="https://github.com/requests/requests">requests</a>.</p>
+<p>If you want to create an HTTP client that is production grade: operable, maintainable, and robust -- Formation's <code>for_requests</code> and <code>middleware</code> submodules contains the building blocks to do so.</p>
+<p>Here's a canonical Google client, created with Formation:</p>
+<pre><code class="hljs css language-py"><span class="hljs-keyword">from</span> formation.for_requests <span class="hljs-keyword">import</span> client, html_response
+<span class="hljs-keyword">from</span> formation.middleware <span class="hljs-keyword">import</span> request_logger
+<span class="hljs-keyword">from</span> attr <span class="hljs-keyword">import</span> attrib, attrs
+<span class="hljs-keyword">from</span> attrs_serde <span class="hljs-keyword">import</span> serde
+<span class="hljs-keyword">import</span> structlog
+
+<span class="hljs-meta">@serde</span>
+<span class="hljs-meta">@attrs</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Query</span><span class="hljs-params">(object)</span>:</span>
+    query = attrib(metadata={<span class="hljs-string">"to"</span>: [<span class="hljs-string">"q"</span>]})
+
+<span class="hljs-meta">@client</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Google</span><span class="hljs-params">(object)</span>:</span>
+    base_uri = <span class="hljs-string">"https://google.com"</span>
+    middleware = [request_logger(structlog.getLogger())]
+    response_as = html_response
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self, text)</span>:</span>
+        <span class="hljs-keyword">return</span> self.request.get(<span class="hljs-string">"/"</span>, params=Query(text))
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    google = Google()
+    (xml, _code, _headers) = google.search(<span class="hljs-string">"larry page"</span>)
+    print(xml.xpath(<span class="hljs-string">"//title/text()"</span>))
+</code></pre>
+<p>Note that it uses a sister project, <a href="https://github.com/jondot/attrs-serde">attrs-serde</a> to shape queries and data contracts, which helps build a client that feels strongly typed and is more maintainable and has a self-explaining API.</p>
+<p>Here's how you would probably build a client in a production-like settings (imports omitted):</p>
+<pre><code class="hljs css language-py"><span class="hljs-meta">@client</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConversionDownloader</span><span class="hljs-params">(object)</span>:</span>
+    base_uri = <span class="hljs-string">"https://internal.acme.srv/ads"</span>
+    middleware = [
+        request_id(),
+        context(
+            namespace=<span class="hljs-string">"ads"</span>,
+            scope=<span class="hljs-string">"conversion-downloader"</span>,
+            env=env.get(<span class="hljs-string">'NODE_ENV'</span>, <span class="hljs-string">'development'</span>),
+            sha=current_git_sha(),
+            version=ads.__version__,
+        ),
+        request_logger(structlog.getLogger()),
+        request_duration(),
+        circuit_breaker(),
+        timeout(<span class="hljs-number">0.3</span>)
+    ]
+    response_as = json_response
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">download</span><span class="hljs-params">(self, text)</span>:</span>
+        <span class="hljs-keyword">return</span> self.request.get(<span class="hljs-string">"/ad-conversions"</span>, params=Query(text))
+</code></pre>
+<p>This client tells a story, here's the important bits.</p>
+<h2><a class="anchor" aria-hidden="true" id="avoids-cascading-errors"></a><a href="#avoids-cascading-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Avoids Cascading Errors</h2>
+<p>Cascading errors are the silent killer of production environments. If you pay attention to post-mortems great companies like Amazon, Google publish, in many ways the root cause is a cascading error.</p>
+<p>The reason is that usual errors, and even complex errors, are caught by the intelligent people that are already working on these systems at these companies. Cascading errors and their effects notoriously don't. This only means that we can't count on intelligence alone, and program <em>defensively</em>, by dividing codebases and separating mechanisms with <a href="https://en.wikipedia.org/wiki/Bulkhead_(partition)">bulk heads</a>.</p>
+<p>Here are two that operate here:</p>
+<ul>
+<li><p>This specific client requests are bound by a 300ms limit, enabling predictable workloads. Essentially a bulkhead in the form of timeout or in other words it doesn't allow for thundering herds effect to happen due to a build-up of slow clients.</p></li>
+<li><p>It sports a circuit breaker, effectively making error conditions more civilized and keeps bad behavior under a stop-gap mechanism. Based on <code>pybreaker</code>, this one has support for open/half-open/closed and central state management; and is arguably the closest thing in the Python ecosystem to <a href="https://github.com/Netflix/Hystrix">hysterix</a> considered by many as industry standard circuitbreaker implementation.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="great-operability-by-default"></a><a href="#great-operability-by-default" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Great Operability By Default</h2>
+<p>Production systems should be <em>operable</em>. They should be as easy to do forensics on, in real time, under stress, as they are to maintain and develop.</p>
+<p>This client supports operability because:</p>
+<ul>
+<li><p>It adds request duration and request context - various bits of data and insights that make sense when shit hits the fan and you need to answer operative questions. How long did it take? on what machine? in what environment? from which code base was this cut? and more.</p></li>
+<li><p>Correlation ID is added to every request. Generated if missing and carried forward if already given; this allows for traceability and the power to search for a storyline of every business process via one connecting ID in your central log management system.</p></li>
+<li><p>Finally, a standard structured logging systems makes sure that you get data in a user-friendly way as well as machine friendly way, using <code>structlog</code>.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="learning-as-code"></a><a href="#learning-as-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Learning as Code</h2>
+<p>A huge enabler of modularity in this client, is the formation middleware
+mechanism. It means that what ever learning happens from production or elsewhere, you can codify and build a middleware to solve for.</p>
+<p>You then stick it in the middleware stack and hopefully share it share with other services and teams. Before you know it, you have a <em>standard</em> production stack, which is your best practices, living as code, telling <em>your</em> production story and experience.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/formation/docs/docs"><span class="arrow-prev">← </span><span>About Formation</span></a><a class="docs-next button" href="/formation/docs/middleware/middleware-accept"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#avoids-cascading-errors">Avoids Cascading Errors</a></li><li><a href="#great-operability-by-default">Great Operability By Default</a></li><li><a href="#learning-as-code">Learning as Code</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/formation/" class="nav-home"><img src="/formation/img/formation-inv.svg" alt="Formation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/formation/docs/en/docs/docs.html">Getting Started</a><a href="/formation/docs/en/middleware/breaker.html">Guides (or other categories)</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/formation" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/jondot" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jondot/formation">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/jondot/formation/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Dotan Nahum</section></footer></div></body></html>
