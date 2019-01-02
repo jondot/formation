@@ -23,6 +23,7 @@ article h1, article h2{
 
 .fixedHeaderContainer{
     background: #fff;
+    color: #565660;
     padding: 2em 0;
 }
 .navPusher{
@@ -30,6 +31,7 @@ article h1, article h2{
 }
 .fixedHeaderContainer *, .navigationSlider .slidingNav ul li a{
     border-radius: 4px;
+    color: #565660;
 }
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
