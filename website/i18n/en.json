@@ -5,6 +5,22 @@
     "previous": "Previous",
     "tagline": "A generic functional middleware infrastructure for Python",
     "docs": {
+      "examples/posting": {
+        "title": "examples/posting",
+        "sidebar_label": "Posting Data"
+      },
+      "examples/production": {
+        "title": "examples/production",
+        "sidebar_label": "Production Ready Clients"
+      },
+      "examples/scraping": {
+        "title": "examples/scraping",
+        "sidebar_label": "Scraping Web Sites"
+      },
+      "formation/attrs": {
+        "title": "formation/attrs",
+        "sidebar_label": "Structured Queries with Attrs"
+      },
       "formation/for-requests": {
         "title": "formation/for-requests",
         "sidebar_label": "Using Formation with Requests"
@@ -62,6 +78,7 @@
     },
     "categories": {
       "Introduction": "Introduction",
+      "Examples": "Examples",
       "Middleware": "Middleware"
     }
   },

@@ -2,7 +2,13 @@
   "docs": {
     "Introduction": [
       "docs",
-      "formation/for-requests"
+      "formation/for-requests",
+      "formation/attrs"
+    ],
+    "Examples": [
+      "examples/posting",
+      "examples/production",
+      "examples/scraping"
     ],
     "Middleware": [
       "middleware/middleware-accept",
