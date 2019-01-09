@@ -21,6 +21,10 @@
       "middleware/retry",
       "middleware/timeout",
       "middleware/ua"
+    ],
+    "Building Middleware": [
+      "building-middleware/simple",
+      "building-middleware/threads"
     ]
   }
 }

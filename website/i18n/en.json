@@ -5,6 +5,14 @@
     "previous": "Previous",
     "tagline": "A generic functional middleware infrastructure for Python",
     "docs": {
+      "building-middleware/simple": {
+        "title": "building-middleware/simple",
+        "sidebar_label": "A Simple Middleware"
+      },
+      "building-middleware/threads": {
+        "title": "building-middleware/threads",
+        "sidebar_label": "Thread Safety and Concurrency"
+      },
       "examples/posting": {
         "title": "examples/posting",
         "sidebar_label": "Posting Data"
@@ -79,7 +87,8 @@
     "categories": {
       "Introduction": "Introduction",
       "Examples": "Examples",
-      "Middleware": "Middleware"
+      "Middleware": "Middleware",
+      "Building Middleware": "Building Middleware"
     }
   },
   "pages-strings": {

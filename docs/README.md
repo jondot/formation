@@ -42,6 +42,8 @@ fancy_get = wrap(to_requests, middleware=[log, timeit])
 fancy_get({'url':'https://google.com'})
 ```
 
+> If you like looking under the hood, perhaps you want to skip to the [Building Middleware](building-middleware/simple.md) section right now and come back for the rest later. If not -- that's fine, continue on :)
+
 ## In Use with Requests
 
 Or, using `formation.for_requests` for the requests HTTP lib:
