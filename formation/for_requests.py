@@ -75,33 +75,45 @@ def apply_params(url, params):
     )
 
 
-def raw_response(ctx):
+def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
+@staticmethod
+def raw_response(ctx):
+    res = get_response(ctx)
+    if not res:
+        return (None, None, None)
+    return (res, res.status_code, res.headers)
+
+
+@staticmethod
 def json_response(ctx):
-    res = raw_response(ctx)
+    res = get_response(ctx)
     if not res:
         return (None, None, None)
     return (res.json(), res.status_code, res.headers)
 
 
+@staticmethod
 def xmltodict_response(ctx):
-    res = raw_response(ctx)
+    res = get_response(ctx)
     if not res:
         return (None, None, None)
     return (xmltodict.parse(res.text), res.status_code, res.headers)
 
 
+@staticmethod
 def html_response(ctx):
-    res = raw_response(ctx)
+    res = get_response(ctx)
     if not res:
         return (None, None, None)
     return (html.fromstring(res.content), res.status_code, res.headers)
 
 
+@staticmethod
 def text_response(ctx):
-    res = raw_response(ctx)
+    res = get_response(ctx)
     if not res:
         return (None, None, None)
     return (res.text, res.status_code, res.headers)
