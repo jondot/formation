@@ -7,7 +7,15 @@ from toolz.curried import keyfilter, reduce
 import xmltodict
 import datetime
 
-__all__ = ["build_sender", "build", "client"]
+__all__ = [
+    "build_sender",
+    "build",
+    "client",
+    "json_response",
+    "xmltodict_response",
+    "html_response",
+    "text_response",
+]
 
 
 def client(cls=None):
@@ -59,6 +67,18 @@ class FormationHttpRequest(object):
     timeout = attrib(default=None)
     allow_redirects = attrib(default=True)
 
+
+@attrs
+class FormationHttpResponse(object):
+    status_code = attrib()
+    res = attrib(default=None)
+    headers = attrib(default={})
+    json = attrib(default={})
+    text = attrib(default="")
+    xml = attrib(default="")
+    html = attrib(default="")
+
+
 def params_filter(p):
     return p.startswith(":")
 
@@ -79,51 +99,58 @@ def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
-@staticmethod
 def raw_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
-    return (res, res.status_code, res.headers)
+    return FormationHttpResponse(
+        res=res, status_code=res.status_code, headers=res.headers
+    )
 
 
-@staticmethod
 def json_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
-    return (res.json(), res.status_code, res.headers)
+    return FormationHttpResponse(
+        json=res.json(), status_code=res.status_code, headers=res.headers
+    )
 
 
-@staticmethod
 def xmltodict_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
-    return (xmltodict.parse(res.text), res.status_code, res.headers)
+    return FormationHttpResponse(
+        xml=xmltodict.parse(res.text), status_code=res.status_code, headers=res.headers
+    )
 
 
-@staticmethod
 def html_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
-    return (html.fromstring(res.content), res.status_code, res.headers)
+    return FormationHttpResponse(
+        html=html.fromstring(res.content),
+        status_code=res.status_code,
+        headers=res.headers,
+    )
 
 
-@staticmethod
 def text_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
-    return (res.text, res.status_code, res.headers)
+    return FormationHttpResponse(
+        text=res.text, status_code=res.status_code, headers=res.headers
+    )
 
 
 def build_sender(middleware=[], base_uri=None, response_as=None):
     wrapped = wrap(requests_adapter, middleware=middleware)
 
     def sender(method, url, session_context={}, params={}, **kwargs):
-        resolved_response_as = kwargs.get("response_as", response_as) or raw_response
+        resolved_response_as = kwargs.pop("response_as", response_as) or raw_response
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         ctx = {
@@ -174,7 +201,7 @@ def requests_adapter(ctx):
         auth=req.auth,
         data=req.data,
         timeout=req.timeout,
-        allow_redirects=req.allow_redirects
+        allow_redirects=req.allow_redirects,
     )
     ctx[_RES_HTTP] = res
     return ctx
