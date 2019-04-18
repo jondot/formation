@@ -81,12 +81,19 @@ def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
-@staticmethod
-def raw_response(ctx):
+def _raw_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
     return (res, res.status_code, res.headers)
+
+
+# we use static method here, to support DSLish methods on python 2.7
+
+
+@staticmethod
+def raw_response(ctx):
+    return _raw_response(ctx)
 
 
 @staticmethod
@@ -125,7 +132,8 @@ def build_sender(middleware=[], base_uri=None, response_as=None):
     wrapped = wrap(requests_adapter, middleware=middleware)
 
     def sender(method, url, session_context={}, params={}, **kwargs):
-        resolved_response_as = kwargs.get("response_as", response_as) or raw_response
+        resolved_response_as = kwargs.get("response_as", response_as) or _raw_response
+        print(resolved_response_as)
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         ctx = {
