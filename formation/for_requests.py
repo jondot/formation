@@ -57,7 +57,7 @@ class FormationHttpRequest(object):
     auth = attrib(default=None)
     data = attrib(default=None)
     timeout = attrib(default=None)
-
+    allow_redirects = attrib(default=True)
 
 def params_filter(p):
     return p.startswith(":")
@@ -174,6 +174,7 @@ def requests_adapter(ctx):
         auth=req.auth,
         data=req.data,
         timeout=req.timeout,
+        allow_redirects=req.allow_redirects
     )
     ctx[_RES_HTTP] = res
     return ctx
