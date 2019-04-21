@@ -69,17 +69,6 @@ class FormationHttpRequest(object):
     allow_redirects = attrib(default=True)
 
 
-@attrs
-class FormationHttpResponse(object):
-    status_code = attrib()
-    res = attrib(default=None)
-    headers = attrib(default={})
-    json = attrib(default={})
-    text = attrib(default="")
-    xml = attrib(default="")
-    html = attrib(default="")
-
-
 def params_filter(p):
     return p.startswith(":")
 
@@ -100,60 +89,39 @@ def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
-def _raw_response(ctx):
+def raw_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return FormationHttpResponse(
-        res=res, status_code=res.status_code, headers=res.headers
-    )
+        return None, None, None
+    return res, res.status_code, res.headers
 
 
-# we use static method here, to support DSLish methods on python 2.7
-
-
-@staticmethod
-def raw_response(ctx):
-    return _raw_response(ctx)
-
-
-@staticmethod
 def json_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return FormationHttpResponse(
-        json=res.json(), status_code=res.status_code, headers=res.headers
-    )
+        return None, None, None
+    return res.json(), res.status_code, res.headers
 
 
 def xmltodict_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return FormationHttpResponse(
-        xml=xmltodict.parse(res.text), status_code=res.status_code, headers=res.headers
-    )
+        return None, None, None
+    return xmltodict.parse(res.text), res.status_code, res.headers
 
 
 def html_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return FormationHttpResponse(
-        html=html.fromstring(res.content),
-        status_code=res.status_code,
-        headers=res.headers,
-    )
+        return None, None, None
+    return html.fromstring(res.content), res.status_code, res.headers
 
 
 def text_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return FormationHttpResponse(
-        text=res.text, status_code=res.status_code, headers=res.headers
-    )
+        return None, None, None
+    return res.text, res.status_code, res.headers
 
 
 def build_sender(middleware=[], base_uri=None, response_as=None):
