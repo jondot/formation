@@ -89,6 +89,7 @@ def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
+@staticmethod
 def raw_response(ctx):
     res = get_response(ctx)
     if not res:
@@ -96,6 +97,7 @@ def raw_response(ctx):
     return res, res.status_code, res.headers
 
 
+@staticmethod
 def json_response(ctx):
     res = get_response(ctx)
     if not res:
@@ -103,6 +105,7 @@ def json_response(ctx):
     return res.json(), res.status_code, res.headers
 
 
+@staticmethod
 def xmltodict_response(ctx):
     res = get_response(ctx)
     if not res:
@@ -110,6 +113,7 @@ def xmltodict_response(ctx):
     return xmltodict.parse(res.text), res.status_code, res.headers
 
 
+@staticmethod
 def html_response(ctx):
     res = get_response(ctx)
     if not res:
@@ -117,6 +121,7 @@ def html_response(ctx):
     return html.fromstring(res.content), res.status_code, res.headers
 
 
+@staticmethod
 def text_response(ctx):
     res = get_response(ctx)
     if not res:
