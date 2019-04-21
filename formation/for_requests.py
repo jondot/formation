@@ -64,6 +64,7 @@ class FormationHttpRequest(object):
     params = attrib(default={})
     auth = attrib(default=None)
     data = attrib(default=None)
+    json = attrib(default=None)
     timeout = attrib(default=None)
     allow_redirects = attrib(default=True)
 
@@ -99,7 +100,7 @@ def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
-def raw_response(ctx):
+def _raw_response(ctx):
     res = get_response(ctx)
     if not res:
         return (None, None, None)
@@ -108,6 +109,15 @@ def raw_response(ctx):
     )
 
 
+# we use static method here, to support DSLish methods on python 2.7
+
+
+@staticmethod
+def raw_response(ctx):
+    return _raw_response(ctx)
+
+
+@staticmethod
 def json_response(ctx):
     res = get_response(ctx)
     if not res:

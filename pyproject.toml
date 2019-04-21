@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "formation"
-version = "0.1.31"
+version = "0.1.33"
 authors = ["Dotan Nahum <jondotan@gmail.com>"]
 description = "A generic functional middleware infrastructure for Python."
 
@@ -20,10 +20,11 @@ python = ">2.7.13 <3.0.0 || ^3.7"
 toolz = "^0.9.0"
 cytoolz = "^0.9.0"
 requests = "^2.20"
-attrs = "^18.2"
 pybreaker = "^0.4.5"
 xmltodict = "^0.11.0"
 lxml = "^4.2"
+attrs = "^19.1"
+attrs-serde = "^0.2.2"
 
 
 [tool.poetry.dev-dependencies]
@@ -40,8 +41,6 @@ snapshottest = "^0.5.0"
 flake8 = { version = "^3.5" }
 requests = "^2.20"
 pytest-vcr = "^1.0"
-attrs-serde = "^0.2.1"
-attrs = "^18.2"
 structlog = "^18.2"
 
 [tool.poetry.extras]
