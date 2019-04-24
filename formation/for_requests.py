@@ -89,12 +89,16 @@ def get_response(ctx):
     return ctx.get(_RES_HTTP, None)
 
 
-@staticmethod
-def raw_response(ctx):
+def _raw_response(ctx):
     res = get_response(ctx)
     if not res:
         return None, None, None
     return res, res.status_code, res.headers
+
+
+@staticmethod
+def raw_response(ctx):
+    return _raw_response(ctx)
 
 
 @staticmethod
