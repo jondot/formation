@@ -137,7 +137,7 @@ def build_sender(middleware=[], base_uri=None, response_as=None):
     wrapped = wrap(requests_adapter, middleware=middleware)
 
     def sender(method, url, session_context={}, params={}, **kwargs):
-        resolved_response_as = kwargs.pop("response_as", response_as) or raw_response
+        resolved_response_as = kwargs.pop("response_as", response_as) or _raw_response
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         ctx = {
