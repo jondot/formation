@@ -133,11 +133,11 @@ def text_response(ctx):
     return res.text, res.status_code, res.headers
 
 
-def build_sender(middleware=[], base_uri=None, response_as=None):
+def build_sender(middleware=[], base_uri=None, default_response_as=_raw_response):
     wrapped = wrap(requests_adapter, middleware=middleware)
 
-    def sender(method, url, session_context={}, params={}, **kwargs):
-        resolved_response_as = kwargs.pop("response_as", response_as) or _raw_response
+    def sender(method, url, session_context={}, params={}, response_as=None, **kwargs):
+        resolved_response_as = response_as or default_response_as
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         ctx = {
@@ -168,7 +168,7 @@ class Sender(object):
 
 def build(middleware=[], base_uri=None, response_as=None):
     return Sender(
-        build_sender(middleware=middleware, base_uri=base_uri, response_as=response_as)
+        build_sender(middleware=middleware, base_uri=base_uri, default_response_as=response_as)
     )
 
 
