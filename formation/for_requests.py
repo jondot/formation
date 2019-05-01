@@ -7,7 +7,15 @@ from toolz.curried import keyfilter, reduce
 import xmltodict
 import datetime
 
-__all__ = ["build_sender", "build", "client"]
+__all__ = [
+    "build_sender",
+    "build",
+    "client",
+    "json_response",
+    "xmltodict_response",
+    "html_response",
+    "text_response",
+]
 
 
 def client(cls=None):
@@ -84,11 +92,8 @@ def get_response(ctx):
 def _raw_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return (res, res.status_code, res.headers)
-
-
-# we use static method here, to support DSLish methods on python 2.7
+        return None, None, None
+    return res, res.status_code, res.headers
 
 
 @staticmethod
@@ -100,40 +105,39 @@ def raw_response(ctx):
 def json_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return (res.json(), res.status_code, res.headers)
+        return None, None, None
+    return res.json(), res.status_code, res.headers
 
 
 @staticmethod
 def xmltodict_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return (xmltodict.parse(res.text), res.status_code, res.headers)
+        return None, None, None
+    return xmltodict.parse(res.text), res.status_code, res.headers
 
 
 @staticmethod
 def html_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return (html.fromstring(res.content), res.status_code, res.headers)
+        return None, None, None
+    return html.fromstring(res.content), res.status_code, res.headers
 
 
 @staticmethod
 def text_response(ctx):
     res = get_response(ctx)
     if not res:
-        return (None, None, None)
-    return (res.text, res.status_code, res.headers)
+        return None, None, None
+    return res.text, res.status_code, res.headers
 
 
-def build_sender(middleware=[], base_uri=None, response_as=None):
+def build_sender(middleware=[], base_uri=None, default_response_as=None):
     wrapped = wrap(requests_adapter, middleware=middleware)
 
-    def sender(method, url, session_context={}, params={}, **kwargs):
-        resolved_response_as = kwargs.get("response_as", response_as) or _raw_response
-        print(resolved_response_as)
+    def sender(method, url, session_context={}, params={}, response_as=None, **kwargs):
+        resolved_response_as = response_as or default_response_as or _raw_response
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         ctx = {
@@ -164,7 +168,7 @@ class Sender(object):
 
 def build(middleware=[], base_uri=None, response_as=None):
     return Sender(
-        build_sender(middleware=middleware, base_uri=base_uri, response_as=response_as)
+        build_sender(middleware=middleware, base_uri=base_uri, default_response_as=response_as)
     )
 
 
@@ -183,6 +187,7 @@ def requests_adapter(ctx):
         params=req.params,
         auth=req.auth,
         data=req.data,
+        json=req.json,
         timeout=req.timeout,
         allow_redirects=req.allow_redirects,
     )
