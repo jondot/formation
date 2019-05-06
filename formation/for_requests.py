@@ -91,7 +91,7 @@ def get_response(ctx):
 
 def _raw_response(ctx):
     res = get_response(ctx)
-    if not res:
+    if res is None:
         return None, None, None
     return res, res.status_code, res.headers
 
@@ -104,7 +104,7 @@ def raw_response(ctx):
 @staticmethod
 def json_response(ctx):
     res = get_response(ctx)
-    if not res:
+    if res is None:
         return None, None, None
     return res.json(), res.status_code, res.headers
 
@@ -112,7 +112,7 @@ def json_response(ctx):
 @staticmethod
 def xmltodict_response(ctx):
     res = get_response(ctx)
-    if not res:
+    if res is None:
         return None, None, None
     return xmltodict.parse(res.text), res.status_code, res.headers
 
@@ -120,7 +120,7 @@ def xmltodict_response(ctx):
 @staticmethod
 def html_response(ctx):
     res = get_response(ctx)
-    if not res:
+    if res is None:
         return None, None, None
     return html.fromstring(res.content), res.status_code, res.headers
 
@@ -128,7 +128,7 @@ def html_response(ctx):
 @staticmethod
 def text_response(ctx):
     res = get_response(ctx)
-    if not res:
+    if res is None:
         return None, None, None
     return res.text, res.status_code, res.headers
 
@@ -168,7 +168,9 @@ class Sender(object):
 
 def build(middleware=[], base_uri=None, response_as=None):
     return Sender(
-        build_sender(middleware=middleware, base_uri=base_uri, default_response_as=response_as)
+        build_sender(
+            middleware=middleware, base_uri=base_uri, default_response_as=response_as
+        )
     )
 
 
