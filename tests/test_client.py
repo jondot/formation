@@ -104,123 +104,103 @@ class GoogleRaw(object):
         return self.request.get(path)
 
 
+def snap(resp_tuple):
+    return (resp_tuple[0], resp_tuple[1], sorted(resp_tuple[2].items()))
+
+
 @pytest.mark.vcr()
 def test_json_all(snapshot):
     h = HttpBin()
-    snapshot.assert_match(h.get())
-    snapshot.assert_match(h.post({"testing": 123}))
-    snapshot.assert_match(h.put({"testing": 123}))
-    snapshot.assert_match(h.delete())
+    snapshot.assert_match(snap(h.get()))
+    snapshot.assert_match(snap(h.post({"testing": 123})))
+    snapshot.assert_match(snap(h.put({"testing": 123})))
+    snapshot.assert_match(snap(h.delete()))
 
-    snapshot.assert_match(h.get_3xx())
-    snapshot.assert_match(h.post_3xx({"testing": 123}))
+    snapshot.assert_match(snap(h.get_3xx()))
+    snapshot.assert_match(snap(h.post_3xx({"testing": 123})))
     try:
         h.put_3xx({"testing": 123})
         pytest.fail("this method should not be allowed")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.delete_3xx()
         pytest.fail("this method should not be allowed")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.get_4xx()
         pytest.fail("404 empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.post_4xx({"testing": 123})
         pytest.fail("404 empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.put_4xx({"testing": 123})
         pytest.fail("404 empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.delete_4xx({"testing": 123})
         pytest.fail("404 empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.get_5xx()
         pytest.fail("5xx empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.post_5xx({"testing": 123})
         pytest.fail("5xx empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.put_5xx({"testing": 123})
         pytest.fail("5xx empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
     try:
         h.delete_5xx({"testing": 123})
         pytest.fail("5xx empty response is not json")
     except Exception as ex:
-        snapshot.assert_match(ex)
+        pass
 
 
 @pytest.mark.vcr()
 def test_html_response(snapshot):
     google = Google()
-    (xml, code, headers) = google.go("/?q=formation")
-    snapshot.assert_match(xml.xpath("//title/text()"))
-    snapshot.assert_match(type(xml))
-    snapshot.assert_match(code)
-    snapshot.assert_match(headers)
+    snapshot.assert_match(snap(google.go("/?q=formation")))
 
     # force error
-    (xml, code, headers) = google.go("/aint-no-body-here")
-    snapshot.assert_match(xml.xpath("//title/text()"))
-    snapshot.assert_match(type(xml))
-    snapshot.assert_match(code)
-    snapshot.assert_match(headers)
+    snapshot.assert_match(snap(google.go("/aint-no-body-here")))
 
 
 @pytest.mark.vcr()
 def test_raw_response(snapshot):
     google = GoogleRaw()
-    (res, code, headers) = google.go("/?q=formation")
-    snapshot.assert_match(res)
-    snapshot.assert_match(type(res))
-    snapshot.assert_match(code)
-    snapshot.assert_match(headers)
+    snapshot.assert_match(snap(google.go("/?q=formation")))
 
     # force error
-    (res, code, headers) = google.go("/aint-no-body-here")
-    snapshot.assert_match(res)
-    snapshot.assert_match(type(res))
-    snapshot.assert_match(code)
-    snapshot.assert_match(headers)
+    snapshot.assert_match(snap(google.go("/aint-no-body-here")))
 
 
 @pytest.mark.vcr()
 def test_json_response(snapshot):
     github = Github()
-    (res, code, headers) = github.stargazers("jondot", "formation")
-    snapshot.assert_match(res)
-    snapshot.assert_match(type(res))
-    snapshot.assert_match(code)
-    snapshot.assert_match(headers)
+    snapshot.assert_match(snap(github.stargazers("jondot", "formation")))
 
     # force error
-    (res, code, headers) = github.stargazers("no-body", "formation")
-    snapshot.assert_match(res)
-    snapshot.assert_match(type(res))
-    snapshot.assert_match(code)
-    snapshot.assert_match(headers)
+    snapshot.assert_match(snap(github.stargazers("no-body", "formation")))
