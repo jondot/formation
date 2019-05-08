@@ -11,7 +11,7 @@
       "examples/scraping"
     ],
     "Middleware": [
-      "middleware/middleware-accept",
+      "middleware/accept",
       "middleware/breaker",
       "middleware/context-logger",
       "middleware/context",

@@ -12,3 +12,4 @@ yarn-error.log
 cov.xml
 node_modules/
 _book/
+pip-wheel-metadata/

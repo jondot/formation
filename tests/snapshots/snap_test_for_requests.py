@@ -7,9 +7,9 @@ from snapshottest import Snapshot
 
 snapshots = Snapshot()
 
-snapshots['test_apply_params 1'] = (
+snapshots['test_apply_params 1'] = '''(
     'http://github.com/jondot/formation?q=foobar',
     {
         'foobar': 'foobaz'
     }
-)
+)'''

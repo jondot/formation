@@ -2,12 +2,12 @@
 # snapshottest: v1 - https://goo.gl/zC4yUc
 from __future__ import unicode_literals
 
-from snapshottest import Snapshot, GenericRepr
+from snapshottest import Snapshot
 
 
 snapshots = Snapshot()
 
-snapshots['test_json_all 1'] = (
+snapshots['test_json_all 1'] = '''(
     {
         'args': {
         },
@@ -23,10 +23,10 @@ snapshots['test_json_all 1'] = (
         'url': 'https://httpbin.org/get'
     },
     200,
-    GenericRepr("{'Content-Length': '247', 'Date': 'Wed, 08 May 2019 11:33:53 GMT', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer-when-downgrade', 'X-Frame-Options': 'DENY', 'Server': 'nginx', 'X-XSS-Protection': '1; mode=block', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*'}")
-)
+    {'Content-Length': '247', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Server': 'nginx', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Date': 'Wed, 08 May 2019 11:33:53 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Content-Type': 'application/json', 'X-Frame-Options': 'DENY'}
+)'''
 
-snapshots['test_json_all 2'] = (
+snapshots['test_json_all 2'] = '''(
     {
         'args': {
         },
@@ -49,10 +49,10 @@ snapshots['test_json_all 2'] = (
         'url': 'https://httpbin.org/post'
     },
     200,
-    GenericRepr("{'Content-Length': '290', 'Date': 'Wed, 08 May 2019 11:33:54 GMT', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer-when-downgrade', 'X-Frame-Options': 'DENY', 'Server': 'nginx', 'X-XSS-Protection': '1; mode=block', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*'}")
-)
+    {'Content-Length': '290', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Server': 'nginx', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Date': 'Wed, 08 May 2019 11:33:54 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Content-Type': 'application/json', 'X-Frame-Options': 'DENY'}
+)'''
 
-snapshots['test_json_all 3'] = (
+snapshots['test_json_all 3'] = '''(
     {
         'args': {
         },
@@ -75,10 +75,10 @@ snapshots['test_json_all 3'] = (
         'url': 'https://httpbin.org/put'
     },
     200,
-    GenericRepr("{'Content-Length': '291', 'Date': 'Wed, 08 May 2019 11:33:54 GMT', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer-when-downgrade', 'X-Frame-Options': 'DENY', 'Server': 'nginx', 'X-XSS-Protection': '1; mode=block', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*'}")
-)
+    {'Content-Length': '291', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Server': 'nginx', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Date': 'Wed, 08 May 2019 11:33:54 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Content-Type': 'application/json', 'X-Frame-Options': 'DENY'}
+)'''
 
-snapshots['test_json_all 4'] = (
+snapshots['test_json_all 4'] = '''(
     {
         'args': {
         },
@@ -100,10 +100,10 @@ snapshots['test_json_all 4'] = (
         'url': 'https://httpbin.org/delete'
     },
     200,
-    GenericRepr("{'Content-Length': '272', 'Date': 'Wed, 08 May 2019 11:33:55 GMT', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer-when-downgrade', 'X-Frame-Options': 'DENY', 'Server': 'nginx', 'X-XSS-Protection': '1; mode=block', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*'}")
-)
+    {'Content-Length': '272', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Server': 'nginx', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Date': 'Wed, 08 May 2019 11:33:55 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Content-Type': 'application/json', 'X-Frame-Options': 'DENY'}
+)'''
 
-snapshots['test_json_all 5'] = (
+snapshots['test_json_all 5'] = '''(
     {
         'args': {
         },
@@ -118,10 +118,10 @@ snapshots['test_json_all 5'] = (
         'url': 'https://httpbin.org/get'
     },
     200,
-    GenericRepr("{'Content-Length': '223', 'Date': 'Wed, 08 May 2019 11:33:56 GMT', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer-when-downgrade', 'X-Frame-Options': 'DENY', 'Server': 'nginx', 'X-XSS-Protection': '1; mode=block', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*'}")
-)
+    {'Content-Length': '223', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Server': 'nginx', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Date': 'Wed, 08 May 2019 11:33:56 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Content-Type': 'application/json', 'X-Frame-Options': 'DENY'}
+)'''
 
-snapshots['test_json_all 6'] = (
+snapshots['test_json_all 6'] = '''(
     {
         'args': {
         },
@@ -136,66 +136,66 @@ snapshots['test_json_all 6'] = (
         'url': 'https://httpbin.org/get'
     },
     200,
-    GenericRepr("{'Content-Length': '224', 'Date': 'Wed, 08 May 2019 11:33:57 GMT', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer-when-downgrade', 'X-Frame-Options': 'DENY', 'Server': 'nginx', 'X-XSS-Protection': '1; mode=block', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*'}")
-)
+    {'Content-Length': '224', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Server': 'nginx', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Date': 'Wed, 08 May 2019 11:33:57 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Content-Type': 'application/json', 'X-Frame-Options': 'DENY'}
+)'''
 
-snapshots['test_json_all 7'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 7'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 8'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 8'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 9'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 9'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 10'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 10'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 11'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 11'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 12'] = GenericRepr("TypeError('delete_4xx() takes 1 positional argument but 2 were given')")
+snapshots['test_json_all 12'] = '''TypeError('delete_4xx() takes exactly 1 argument (2 given)',)'''
 
-snapshots['test_json_all 13'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 13'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 14'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 14'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 15'] = GenericRepr("JSONDecodeError('Expecting value: line 1 column 1 (char 0)')")
+snapshots['test_json_all 15'] = '''ValueError('No JSON object could be decoded',)'''
 
-snapshots['test_json_all 16'] = GenericRepr("TypeError('delete_5xx() takes 1 positional argument but 2 were given')")
+snapshots['test_json_all 16'] = '''TypeError('delete_5xx() takes exactly 1 argument (2 given)',)'''
 
-snapshots['test_html_response 1'] = [
+snapshots['test_html_response 1'] = '''[
     'Google'
-]
+]'''
 
-snapshots['test_html_response 2'] = GenericRepr("<class 'lxml.html.HtmlElement'>")
+snapshots['test_html_response 2'] = '''<class 'lxml.html.HtmlElement'>'''
 
-snapshots['test_html_response 3'] = 200
+snapshots['test_html_response 3'] = '''200'''
 
-snapshots['test_html_response 4'] = GenericRepr("{'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Cache-Control': 'private, max-age=0', 'Content-Encoding': 'gzip', 'Content-Type': 'text/html; charset=ISO-8859-1', 'Date': 'Wed, 08 May 2019 09:49:43 GMT', 'Expires': '-1', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Server': 'gws', 'Set-Cookie': '1P_JAR=2019-05-08-09; expires=Fri, 07-Jun-2019 09:49:43 GMT; path=/; domain=.google.com, NID=183=w7zhe_zTVazag0tw5ieire797eXQsvWTMI4a0I59oK1Ihel_tmwLT52S16sbIIGBbhENNPeV5OLNkg1clkiHnAmqCfrnEjGtcE4GQxDjwFfByS9UTMJx_o4pDSEUJjtdN47lSs7vnF8NFEYYe7uley8xH2oEhqaFQQwKa6A2o5E; expires=Thu, 07-Nov-2019 09:49:43 GMT; path=/; domain=.google.com; HttpOnly', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0'}")
+snapshots['test_html_response 4'] = '''{'X-XSS-Protection': '0', 'Content-Encoding': 'gzip', 'Set-Cookie': '1P_JAR=2019-05-08-09; expires=Fri, 07-Jun-2019 09:49:43 GMT; path=/; domain=.google.com, NID=183=w7zhe_zTVazag0tw5ieire797eXQsvWTMI4a0I59oK1Ihel_tmwLT52S16sbIIGBbhENNPeV5OLNkg1clkiHnAmqCfrnEjGtcE4GQxDjwFfByS9UTMJx_o4pDSEUJjtdN47lSs7vnF8NFEYYe7uley8xH2oEhqaFQQwKa6A2o5E; expires=Thu, 07-Nov-2019 09:49:43 GMT; path=/; domain=.google.com; HttpOnly', 'Expires': '-1', 'Server': 'gws', 'Cache-Control': 'private, max-age=0', 'Date': 'Wed, 08 May 2019 09:49:43 GMT', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Content-Type': 'text/html; charset=ISO-8859-1', 'X-Frame-Options': 'SAMEORIGIN'}'''
 
-snapshots['test_html_response 5'] = [
+snapshots['test_html_response 5'] = '''[
     'Error 404 (Not Found)!!1'
-]
+]'''
 
-snapshots['test_html_response 6'] = GenericRepr("<class 'lxml.html.HtmlElement'>")
+snapshots['test_html_response 6'] = '''<class 'lxml.html.HtmlElement'>'''
 
-snapshots['test_html_response 7'] = 404
+snapshots['test_html_response 7'] = '''404'''
 
-snapshots['test_html_response 8'] = GenericRepr("{'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Content-Length': '1578', 'Content-Type': 'text/html; charset=UTF-8', 'Date': 'Wed, 08 May 2019 09:49:43 GMT', 'Referrer-Policy': 'no-referrer'}")
+snapshots['test_html_response 8'] = '''{'Date': 'Wed, 08 May 2019 09:49:43 GMT', 'Content-Length': '1578', 'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Content-Type': 'text/html; charset=UTF-8', 'Referrer-Policy': 'no-referrer'}'''
 
-snapshots['test_raw_response 1'] = GenericRepr("<Response [200]>")
+snapshots['test_raw_response 1'] = '''<Response [200]>'''
 
-snapshots['test_raw_response 2'] = GenericRepr("<class 'requests.models.Response'>")
+snapshots['test_raw_response 2'] = '''<class 'requests.models.Response'>'''
 
-snapshots['test_raw_response 3'] = 200
+snapshots['test_raw_response 3'] = '''200'''
 
-snapshots['test_raw_response 4'] = GenericRepr("{'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Cache-Control': 'private, max-age=0', 'Content-Encoding': 'gzip', 'Content-Type': 'text/html; charset=ISO-8859-1', 'Date': 'Wed, 08 May 2019 09:49:44 GMT', 'Expires': '-1', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Server': 'gws', 'Set-Cookie': '1P_JAR=2019-05-08-09; expires=Fri, 07-Jun-2019 09:49:44 GMT; path=/; domain=.google.com, NID=183=nz32fYoxWDSVnBQVCeQ6Vq3qsz5frRlXS56aDTklB4pb_jEKWNoSOoziZl_bAJNgmV9SZje0FlrPl1XGIfOAKguJ2ieQmuayWU6vC7FieinrYVR9GZpoFfMI0bV29ynziX5EYo8dZM7JwBUaiyE-KlkTY0wdXP-KWPnEx06_VTM; expires=Thu, 07-Nov-2019 09:49:44 GMT; path=/; domain=.google.com; HttpOnly', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0'}")
+snapshots['test_raw_response 4'] = '''{'X-XSS-Protection': '0', 'Content-Encoding': 'gzip', 'Set-Cookie': '1P_JAR=2019-05-08-09; expires=Fri, 07-Jun-2019 09:49:44 GMT; path=/; domain=.google.com, NID=183=nz32fYoxWDSVnBQVCeQ6Vq3qsz5frRlXS56aDTklB4pb_jEKWNoSOoziZl_bAJNgmV9SZje0FlrPl1XGIfOAKguJ2ieQmuayWU6vC7FieinrYVR9GZpoFfMI0bV29ynziX5EYo8dZM7JwBUaiyE-KlkTY0wdXP-KWPnEx06_VTM; expires=Thu, 07-Nov-2019 09:49:44 GMT; path=/; domain=.google.com; HttpOnly', 'Expires': '-1', 'Server': 'gws', 'Cache-Control': 'private, max-age=0', 'Date': 'Wed, 08 May 2019 09:49:44 GMT', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Content-Type': 'text/html; charset=ISO-8859-1', 'X-Frame-Options': 'SAMEORIGIN'}'''
 
-snapshots['test_raw_response 5'] = GenericRepr("<Response [404]>")
+snapshots['test_raw_response 5'] = '''<Response [404]>'''
 
-snapshots['test_raw_response 6'] = GenericRepr("<class 'requests.models.Response'>")
+snapshots['test_raw_response 6'] = '''<class 'requests.models.Response'>'''
 
-snapshots['test_raw_response 7'] = 404
+snapshots['test_raw_response 7'] = '''404'''
 
-snapshots['test_raw_response 8'] = GenericRepr("{'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Content-Length': '1578', 'Content-Type': 'text/html; charset=UTF-8', 'Date': 'Wed, 08 May 2019 09:49:44 GMT', 'Referrer-Policy': 'no-referrer'}")
+snapshots['test_raw_response 8'] = '''{'Date': 'Wed, 08 May 2019 09:49:44 GMT', 'Content-Length': '1578', 'Alt-Svc': 'quic=":443"; ma=2592000; v="46,44,43,39"', 'Content-Type': 'text/html; charset=UTF-8', 'Referrer-Policy': 'no-referrer'}'''
 
-snapshots['test_json_response 1'] = [
+snapshots['test_json_response 1'] = '''[
     {
         'avatar_url': 'https://avatars0.githubusercontent.com/u/83390?v=4',
         'events_url': 'https://api.github.com/users/jondot/events{/privacy}',
@@ -276,21 +276,21 @@ snapshots['test_json_response 1'] = [
         'type': 'User',
         'url': 'https://api.github.com/users/look4regev'
     }
-]
+]'''
 
-snapshots['test_json_response 2'] = GenericRepr("<class 'list'>")
+snapshots['test_json_response 2'] = '''<type 'list'>'''
 
-snapshots['test_json_response 3'] = 200
+snapshots['test_json_response 3'] = '''200'''
 
-snapshots['test_json_response 4'] = GenericRepr("{'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type', 'Cache-Control': 'public, max-age=60, s-maxage=60', 'Content-Encoding': 'gzip', 'Content-Security-Policy': "default-src 'none'", 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 08 May 2019 11:24:33 GMT', 'ETag': 'W/"df5cbf018e345904a693cf94b25ac97c"', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Server': 'GitHub.com', 'Status': '200 OK', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'Vary': 'Accept', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'deny', 'X-GitHub-Media-Type': 'github.v3; format=json', 'X-GitHub-Request-Id': 'EFC1:43DC:FE8377:27B4340:5CD2BC70', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'X-RateLimit-Reset': '1557318273', 'X-XSS-Protection': '1; mode=block'}")
+snapshots['test_json_response 4'] = '''{'Status': '200 OK', 'X-RateLimit-Remaining': '59', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'none'", 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type', 'X-GitHub-Request-Id': 'EFC1:43DC:FE8377:27B4340:5CD2BC70', 'X-GitHub-Media-Type': 'github.v3; format=json', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'Vary': 'Accept', 'X-RateLimit-Limit': '60', 'Server': 'GitHub.com', 'ETag': 'W/"df5cbf018e345904a693cf94b25ac97c"', 'Cache-Control': 'public, max-age=60, s-maxage=60', 'Date': 'Wed, 08 May 2019 11:24:33 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Type': 'application/json; charset=utf-8', 'X-Frame-Options': 'deny', 'Content-Encoding': 'gzip', 'X-RateLimit-Reset': '1557318273'}'''
 
-snapshots['test_json_response 5'] = {
+snapshots['test_json_response 5'] = '''{
     'documentation_url': 'https://developer.github.com/v3/activity/starring/#list-stargazers',
     'message': 'Not Found'
-}
+}'''
 
-snapshots['test_json_response 6'] = GenericRepr("<class 'dict'>")
+snapshots['test_json_response 6'] = '''<type 'dict'>'''
 
-snapshots['test_json_response 7'] = 404
+snapshots['test_json_response 7'] = '''404'''
 
-snapshots['test_json_response 8'] = GenericRepr("{'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type', 'Content-Encoding': 'gzip', 'Content-Security-Policy': "default-src 'none'", 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 08 May 2019 11:24:33 GMT', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Server': 'GitHub.com', 'Status': '404 Not Found', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'deny', 'X-GitHub-Media-Type': 'github.v3; format=json', 'X-GitHub-Request-Id': 'EFC2:5DB6:6D67D9:12DC53F:5CD2BC71', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'X-RateLimit-Reset': '1557318273', 'X-XSS-Protection': '1; mode=block'}")
+snapshots['test_json_response 8'] = '''{'Status': '404 Not Found', 'X-RateLimit-Remaining': '58', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'none'", 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type', 'X-GitHub-Request-Id': 'EFC2:5DB6:6D67D9:12DC53F:5CD2BC71', 'X-GitHub-Media-Type': 'github.v3; format=json', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'Server': 'GitHub.com', 'X-RateLimit-Limit': '60', 'Date': 'Wed, 08 May 2019 11:24:33 GMT', 'Access-Control-Allow-Origin': '*', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Type': 'application/json; charset=utf-8', 'X-Frame-Options': 'deny', 'Content-Encoding': 'gzip', 'X-RateLimit-Reset': '1557318273'}'''

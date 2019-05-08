@@ -7,7 +7,7 @@ from snapshottest import Snapshot
 
 snapshots = Snapshot()
 
-snapshots['test_default_stack 1'] = [
+snapshots['test_default_stack 1'] = '''[
     [
         'info',
         'request.http',
@@ -106,9 +106,9 @@ snapshots['test_default_stack 1'] = [
             'v': '0.01'
         }
     ]
-]
+]'''
 
-snapshots['test_default_stack 2'] = {
+snapshots['test_default_stack 2'] = '''{
     'env': 'local',
     'ns': 'service',
     'pid': 'pid-1',
@@ -119,4 +119,4 @@ snapshots['test_default_stack 2'] = {
     'tid': 'tid-1',
     'uid': None,
     'v': '0.01'
-}
+}'''

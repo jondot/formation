@@ -36,7 +36,7 @@ pytest = "^3.0"
 pytest-benchmark = "^3.1"
 pytest-testmon = "^0.9.13"
 pytest-watch = "^4.2"
-snapshottest = "^0.5.0"
+snapshottest =  { git = "https://github.com/jondot/snapshottest", branch="serialize-snapshots" }
 
 flake8 = { version = "^3.5" }
 requests = "^2.20"
