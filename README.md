@@ -1,6 +1,8 @@
 ![](media/cover.png)
 
 # Formation
+[![Build Status](https://travis-ci.org/jondot/formation.svg?branch=master)](https://travis-ci.org/jondot/formation.svg)
+[![Coverage Status](https://coveralls.io/repos/github/jondot/formation/badge.svg?branch=master)](https://coveralls.io/github/jondot/formation?branch=master)
 
 A generic functional middleware infrastructure for Python.
 

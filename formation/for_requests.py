@@ -60,8 +60,12 @@ def client(cls=None):
 class FormationHttpRequest(object):
     url = attrib()
     method = attrib(default="get")
+
+    # these two are very stabby. a single default instance is shared among all attrs
+    # objects. to assign new keys, update immutably -- use merge and re-assign
     headers = attrib(default={})
     params = attrib(default={})
+
     auth = attrib(default=None)
     data = attrib(default=None)
     json = attrib(default=None)
@@ -140,12 +144,10 @@ def build_sender(middleware=[], base_uri=None, default_response_as=None):
         resolved_response_as = response_as or default_response_as or _raw_response
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
-        ctx = {
-            _REQ_HTTP: FormationHttpRequest(
-                url=urljoin(base_uri, url), method=method, params=params, **kwargs
-            ),
-            _SESSION: session_context,
-        }
+        req = FormationHttpRequest(
+            url=urljoin(base_uri, url), method=method, params=params, **kwargs
+        )
+        ctx = {_REQ_HTTP: req, _SESSION: session_context}
         ctx = wrapped(ctx)
         return resolved_response_as(ctx)
 
@@ -165,6 +167,9 @@ class Sender(object):
     def put(self, path, **kwargs):
         return self.send("put", path, **kwargs)
 
+    def delete(self, path, **kwargs):
+        return self.send("delete", path, **kwargs)
+
 
 def build(middleware=[], base_uri=None, response_as=None):
     return Sender(
@@ -172,10 +177,6 @@ def build(middleware=[], base_uri=None, response_as=None):
             middleware=middleware, base_uri=base_uri, default_response_as=response_as
         )
     )
-
-
-# TODO: timeout (middleware)
-# TODO: pass more requests vars via req (e.g. timeout, retry)
 
 
 def requests_adapter(ctx):

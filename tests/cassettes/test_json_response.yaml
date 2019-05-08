@@ -1,0 +1,142 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.github.com/repos/jondot/formation/stargazers
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62VTW+qQBSG/wtr01Gwak2abtpFF5p00ZvbNDeGwoijOEOGAVNI/3sPHxcHqjbH
+        YWFUPO8zr8M84T23QhEwbs2treC+UNbAYr41nznO3XBgceHTVfHdWjy+TP78XYbeNsgW2e4Ac27q
+        KleuEhnC7xulonhOSHUxHt4ETG2SjySm0hNcUa5uPLEnCSnJD+n9GAiBrBnlEnChw4pYjamywIpJ
+        U3Oj9mFn8WrNcrgZW4swFAdIdoueh5MmA5Wqz4wH6DxkciLUhsIeQfWv4g+zWGGKlPM5Kd7gNhSE
+        GLZcUh9Rpk5AlQOHFjmRNBIlKvmIPckixQTHlGrlgCNk4HKWuVgO5GKIF3Uwy5fzkKMpHCpMsArk
+        JJIsdb3PYgsk9ShLYTvRsE4SWOozonCKX+FWF5vLFF25/r5Qa+2GMf0aHFXz1kzuhePAXHHy7Zk9
+        mtmT07o9jxfbJ3i93cP0JeXss8rVfAPptMKXtdMGUeL9z12vXodgIl+DMtKvofQn4BGpqwvnAq1g
+        Q8JK2ATxGjbRfkTUmrQkxqmYSLaWzA9d7tc2Tp2pfTsdnbbRy5bZ82iZPf1m4/kHYM03sLHd+bKQ
+        7VmUk1r0ei1/QkzM1GlGcuqg/vxsUU0V1WFYS/UsXlQ93Y+r7T4GuoZC7MaSBjStbR0Ph5OZfXfa
+        1pfD4vENnp2732x1zj47a76Bra3Kl2VtjaJcPSavV/UHw8RUDWYkqsbpz1MdaqqpxsJaqkXxkmrh
+        fhxttcEq+u8bWktoBEkOAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:24:33 GMT
+      ETag:
+      - W/"df5cbf018e345904a693cf94b25ac97c"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - GitHub.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - EFC1:43DC:FE8377:27B4340:5CD2BC70
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '59'
+      X-RateLimit-Reset:
+      - '1557318273'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.github.com/repos/no-body/formation/stargazers
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAxXJQQoCMQwAwK9IvOrm4G0f4NEvSGxDN9A2S5IWVPy7ehzmDY3dqTCscNM4XHX0
+        DCfImkbjHhSi/T6s/n6L2H1FzDy56s62FIltPJakDecFKYVMiSd6kJn0gscqHuc/C73YHD5f7nP3
+        EHAAAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:24:33 GMT
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - GitHub.com
+      Status:
+      - 404 Not Found
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - EFC2:5DB6:6D67D9:12DC53F:5CD2BC71
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '58'
+      X-RateLimit-Reset:
+      - '1557318273'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: Not Found
+version: 1

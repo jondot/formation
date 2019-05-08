@@ -5,7 +5,7 @@ cover:
 	pytest --cov=formation tests -sq
 
 test:
-	pytest --cov-report xml:cov.xml --cov=formation tests -sq
+	pytest -vv --cov-report xml:cov.xml --cov=formation tests -sq
 
 tox:
 	tox

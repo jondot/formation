@@ -1,0 +1,1010 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 8825bec2-0523-4621-bd21-f105d3920917
+    method: GET
+    uri: https://httpbin.org/get
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1WPT0/EIBDF7/0UhOOm/N3tbru3jdHoXROvUCjFNEAoHnSz312oSvQyyXvzm3kz
+        1wYAKKJZ4Rlcby0octZC6bg5WWbjMo46pKzhjuzgBlUX3bvRK+tMaZtPG1qg9LSIpCt4513SLqHn
+        j6ALJUJY7CiS9Y68rd5V8NGvW8qcUpDWYR9N7b2sOqKLyXsKkWaNJiFjWeMjYZhiWtFX9LAIKTP/
+        pArc97yTeuSIdnyPDkfOkFS5TIx2aj9wOrATzKM/7/tojXVlkNEBHw+Y8wGzvgX/5HcafI/L78Xr
+        mZA/lxOjE2xuzRd7C2YIYgEAAA==
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '247'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 May 2019 11:33:53 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 72c26da4-74e4-4659-a13c-84e3c27d529b
+    method: POST
+    uri: https://httpbin.org/post
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA2WQwU/DIBjF7/srSI/LaAfr2rWJh8VoNPGoiVcKXykGgVB20GX/u9DOZsbje+/H
+        C+87rxDKmJdj1qLzZYOSFCywKLMAY1BG3hG6y+akVxpuyd76zxs5ABPgJyDKaBw5BxdS17pYzx2L
+        ix8MtyL2p1h+K7dBAnrNAizgvTUBTMAvYGQYEkfIv/D1y0GKmHNacRaUNcXHaM0CPtlx+sIQguuU
+        ya2XS/Y2gsdHGXumwQPgnnU+1VhfkHybbxf0HT9q1nWRfxYJrimnlWAlrksocVntG8zIjuNDCTtO
+        a7GnTZfFp9fbTF9qkTlpPRvWK6mSlZFtk1dlTmmTk8MG/ZHXw5+8/p0wtkVxM6Vwad7qsvoB9QFx
+        y8oBAAA=
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '290'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 May 2019 11:33:54 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - cdb0623c-11f8-47bd-b884-a86b7517096e
+    method: PUT
+    uri: https://httpbin.org/put
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA2WQwU7DMBBE7/0Ky8cqTuK0JGklDhUCgcQRJK52vHGMjG05zgGq/jt2WqKiHmfm
+        7Wh3jyuEMPNyxHt0PGUoScECixIHGIMy8p5WG3xOeqXhmuyt/7qSAzABfgaijMah68CF1LUu1ueO
+        xSWPprMi9qdY/iiXIQG9ZgEW8MGaACaQVzAyDImj9CZ8+3aQIuacVh0Lypric7RmAZ/tOK8whOC4
+        Mrn1csneR/DkIGPPfPAApGfcpxrrC5qXebmgH+RJM84j/yIS3Ale1tWmI5T2Ldk2XBDetlvC2po3
+        d7QpdzXgOHr5zbzSHplJ67NhvZIqWZiWu7ze5lW1y2mboX/y8vjJ678Txn1RXJ1SuCng1Wn1C0um
+        1DbJAQAA
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '291'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 May 2019 11:33:54 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 44bce06f-7af1-4bf1-8355-0aab574d5d10
+    method: DELETE
+    uri: https://httpbin.org/delete
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1WQzW7DIBCE734KxDEy2E7t/PgWVa3aeyv1CmbBVBQQJoc2yrsX7NRKL0gz8zGw
+        eykQwiyoCffoci1RloJFliTGi5TawH0sXfi6kyMwAWEGkkzGaRjAx1ywqTZLx+qSJzs4oa3KsfrR
+        vkQCpGERVvDR2Qg2krdvD5li3hs9sKidrT4nZ1fwxU3zK2OMnmtLXVBr9j5BICeVejIRRyCS8ZBr
+        XKgaWtN6RT/Is2GcJ/5VZLht+QD1TpI9kw1peToOD11HasZ4t29FJ5oap6u38ecv9ciejVkMF7TS
+        2cJNfaS7lm63R9ocSvRP3nZ7DuZvhKmvqrtRKgEG0lqKa/ELDffggaQBAAA=
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '272'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 May 2019 11:33:55 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 1ec8ad6a-82c9-4dc4-b275-03a6d310e9dc
+    method: GET
+    uri: https://httpbin.org/status/301
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 08 May 2019 11:33:55 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+      location:
+      - /redirect/1
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 1ec8ad6a-82c9-4dc4-b275-03a6d310e9dc
+    method: GET
+    uri: https://httpbin.org/redirect/1
+  response:
+    body:
+      string: '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+        <title>Redirecting...</title>
+
+        <h1>Redirecting...</h1>
+
+        <p>You should be redirected automatically to target URL: <a href="/get">/get</a>.  If
+        not click the link.'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '215'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:33:56 GMT
+      Location:
+      - /get
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 302
+      message: FOUND
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 1ec8ad6a-82c9-4dc4-b275-03a6d310e9dc
+    method: GET
+    uri: https://httpbin.org/get
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1WPzW7DIBCE734KxDEyP3Zc184th1TtA1TqdYENRrLAwvSSKO9eTFurPc7MN9rZ
+        e0UIhWhXeiL3R002OSEYjMXJMhtnrXFJWdODONAC7S67eB2M83aL7c0tNTF4nSHhDr6GtZSnlBbl
+        PA/R7tn7ipGdLfpCpAnZFVR0GlKIouGSyx39YC8zKJX5N7PBDeoBTA9saPXIOqM7ptrnJyaP0Jtj
+        I3E0mubqz1chOut8KcqR9x1v25E3Q03+ye9r9DPOv4vXkxB/lguLiVaP6gsstyxQOQEAAA==
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '223'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 May 2019 11:33:56 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 9afa181e-8ac3-4fdc-9226-798314b738d6
+    method: POST
+    uri: https://httpbin.org/status/301
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 08 May 2019 11:33:56 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+      location:
+      - /redirect/1
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 9afa181e-8ac3-4fdc-9226-798314b738d6
+    method: GET
+    uri: https://httpbin.org/redirect/1
+  response:
+    body:
+      string: '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+        <title>Redirecting...</title>
+
+        <h1>Redirecting...</h1>
+
+        <p>You should be redirected automatically to target URL: <a href="/get">/get</a>.  If
+        not click the link.'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '215'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:33:56 GMT
+      Location:
+      - /get
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 302
+      message: FOUND
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 9afa181e-8ac3-4fdc-9226-798314b738d6
+    method: GET
+    uri: https://httpbin.org/get
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1WPzW7DIBCE734KxDEyYGzLgdxyaJU+QKVe+VljJAssTC+N8u7Bbmu1x5n5Rjt7
+        rxDCKrkVX9D9UaNNTqAspN0pshhXY2DJReMTO+EdOlzyEky0Prgtdl9+qZGFcVYZDvAW17085bxo
+        H2hM7sjeV0jk6iDsRJ6AjEonb1SOiXHa0OZAP8jrrLQu/JvdYKlGxQUHIpTpSD9aQ2TbDuQsRcd7
+        fe6EHXCp/nwVk3c+bEXeSDr0tG0l5aJG/+T3NfyZ5t/F64WxP8uZg4yrR/UEvZcxbjkBAAA=
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '224'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 May 2019 11:33:57 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - a6b37e65-053b-4ad3-bb13-0727860c8789
+    method: PUT
+    uri: https://httpbin.org/status/301
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 08 May 2019 11:33:57 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+      location:
+      - /redirect/1
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - a6b37e65-053b-4ad3-bb13-0727860c8789
+    method: PUT
+    uri: https://httpbin.org/redirect/1
+  response:
+    body:
+      string: '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+        <title>405 Method Not Allowed</title>
+
+        <h1>Method Not Allowed</h1>
+
+        <p>The method is not allowed for the requested URL.</p>
+
+'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Allow:
+      - HEAD, GET, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '178'
+      Content-Type:
+      - text/html
+      Date:
+      - Wed, 08 May 2019 11:33:57 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 405
+      message: METHOD NOT ALLOWED
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 7ec21533-1410-4bd7-8734-6f9d5742e4fc
+    method: DELETE
+    uri: https://httpbin.org/status/301
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 08 May 2019 11:33:58 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+      location:
+      - /redirect/1
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 7ec21533-1410-4bd7-8734-6f9d5742e4fc
+    method: DELETE
+    uri: https://httpbin.org/redirect/1
+  response:
+    body:
+      string: '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+        <title>405 Method Not Allowed</title>
+
+        <h1>Method Not Allowed</h1>
+
+        <p>The method is not allowed for the requested URL.</p>
+
+'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Allow:
+      - HEAD, GET, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '178'
+      Content-Type:
+      - text/html
+      Date:
+      - Wed, 08 May 2019 11:33:58 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 405
+      message: METHOD NOT ALLOWED
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - fa5d6867-3e8f-4f29-a1d0-8af932cca300
+    method: GET
+    uri: https://httpbin.org/status/404
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:33:59 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: NOT FOUND
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - d8c988d7-e98d-4600-a979-f748d6b5baab
+    method: POST
+    uri: https://httpbin.org/status/404
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:33:59 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: NOT FOUND
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - b9ca66a0-090f-4ceb-ae8c-3430736fd100
+    method: PUT
+    uri: https://httpbin.org/status/404
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:34:00 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: NOT FOUND
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 3bba9139-466a-45b0-9eea-e1467bd4f993
+    method: GET
+    uri: https://httpbin.org/status/501
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:34:00 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 501
+      message: NOT IMPLEMENTED
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 0b444c27-0e97-43b7-8ad7-7ed08d7145a9
+    method: POST
+    uri: https://httpbin.org/status/501
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:34:01 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 501
+      message: NOT IMPLEMENTED
+- request:
+    body: testing=123
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - ca90afcd-8fb9-49fb-a457-c50543f3c7ae
+    method: PUT
+    uri: https://httpbin.org/status/501
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 08 May 2019 11:34:02 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 501
+      message: NOT IMPLEMENTED
+version: 1
