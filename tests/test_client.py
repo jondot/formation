@@ -1,5 +1,13 @@
 import pytest
-from formation.for_requests import client, html_response, raw_response, json_response
+import formation.for_requests
+from formation.for_requests import (
+    client,
+    html_response,
+    raw_response,
+    json_response,
+    xmltodict_response,
+    text_response,
+)
 from formation.middleware import request_logger, ua, accept, timeout, request_id
 from attr import attrib, attrs
 from attrs_serde import serde
@@ -104,6 +112,24 @@ class GoogleRaw(object):
         return self.request.get(path)
 
 
+@client
+class XmlToDict(object):
+    base_uri = "https://httpbin.org"
+    response_as = xmltodict_response
+
+    def go(self, path="/xml"):
+        return self.request.get(path)
+
+
+@client
+class GoogleText(object):
+    base_uri = "https://www.google.com/"
+    response_as = text_response
+
+    def go(self, path="/"):
+        return self.request.get(path)
+
+
 def snap(resp_tuple):
     return (resp_tuple[0], resp_tuple[1], sorted(resp_tuple[2].items()))
 
@@ -198,9 +224,36 @@ def test_raw_response(snapshot):
 
 
 @pytest.mark.vcr()
+def test_xmldict_response(snapshot):
+    cl = XmlToDict()
+    snapshot.assert_match(snap(cl.go()))
+
+
+@pytest.mark.vcr()
+def test_text_response(snapshot):
+    google = GoogleText()
+    snapshot.assert_match(snap(google.go("/?q=formation")))
+
+
+@pytest.mark.vcr()
 def test_json_response(snapshot):
     github = Github()
     snapshot.assert_match(snap(github.stargazers("jondot", "formation")))
 
     # force error
     snapshot.assert_match(snap(github.stargazers("no-body", "formation")))
+
+
+def test_responses_sad(snapshot):
+    class Rig:
+        xmltodict = xmltodict_response
+        json = json_response
+        text = text_response
+        html = html_response
+        raw = raw_response
+
+    snapshot.assert_match(Rig.xmltodict({}))
+    snapshot.assert_match(Rig.json({}))
+    snapshot.assert_match(Rig.html({}))
+    snapshot.assert_match(Rig.raw({}))
+    snapshot.assert_match(Rig.text({}))

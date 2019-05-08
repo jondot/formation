@@ -1,0 +1,100 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://httpbin.org/xml
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4WRvW6DMBRGd57ihoWJ0u6GKFIYkFKlKiioowO3YNVg5J+kvH1tEzVJO4QBG5/r
+        cz8bsv4eOJxQKibGNHp5eo4Ax0a0bOzSyKiYqoaxaJ0FAVnFMcAGys3r2y4HhRrEJyjOWlQAcexK
+        lq9enCEA+2imOaZhSYeJI5QOQmlp6GlLtYVb+3aiyRw5a6i2ORZMje6FTMMPYaSCSho+L8A2coPP
+        UxWVzVLuim3uI3jgU4CeJ6unnIfLsgU+T1bTLwQzgRZQi7FFWbO2Q61WJFkKFkviNbfN9of8/VDk
+        9eNOv7329mpPDM93as+ZxiGr+xmIG29zkMSuAJUInUSqSeJL73cm/03Cm45mvgj+OK+S68kuM/fD
+        sh+Np87aCgIAAA==
+    headers:
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      content-length:
+      - '295'
+      content-type:
+      - application/xml
+      date:
+      - Wed, 08 May 2019 12:54:29 GMT
+      referrer-policy:
+      - no-referrer-when-downgrade
+      server:
+      - nginx
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://httpbin.org/aint-no-body-here
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA02MPQ+CMBiEd37F6S71a2w6CBpNUInBGMcGXoRYC7ZFw7+3hMXxnnvu+CQ+R9k9
+        3WKfHROk101yiDCdMXZbRYzFWTwWq3CJXa2lYmx7moqAu9opEuv5GqfGYdd0uuBshAGvFuKP+hTw
+        VmQVwdC7I+uowPWS4CsttPfKwUOj4bxiyXzIhMChRN90IO3I+MHQDaOX1J1UqkerSFpCXlH+HEwD
+        25JStX5A+jtnesiHrHXIWSuCH7+KaarpAAAA
+    headers:
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - '*'
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      content-length:
+      - '198'
+      content-type:
+      - text/html
+      date:
+      - Wed, 08 May 2019 12:54:30 GMT
+      referrer-policy:
+      - no-referrer-when-downgrade
+      server:
+      - nginx
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: NOT FOUND
+version: 1

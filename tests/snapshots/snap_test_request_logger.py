@@ -10,6 +10,25 @@ snapshots = Snapshot()
 snapshots['test_default_stack 1'] = '''[
     [
         'info',
+        'context',
+        {
+            'headers': None
+        },
+        {
+            'env': 'local',
+            'ns': 'service',
+            'pid': 'pid-1',
+            'rid': 'req-1',
+            'rid_p': None,
+            'scope': 'all',
+            'sha': 'dev',
+            'tid': 'tid-1',
+            'uid': None,
+            'v': '0.01'
+        }
+    ],
+    [
+        'info',
         'request.http',
         {
             'headers': None,

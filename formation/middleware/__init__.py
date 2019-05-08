@@ -1,4 +1,8 @@
-from .breaker import circuit_breaker, trigger_breaker_if  # noqa
+from .breaker import (
+    circuit_breaker,
+    trigger_breaker_if,
+    BreakerTriggerException,
+)  # noqa
 from .context import context
 from .context_logger import context_logger  # noqa
 from .logger import request_logger

@@ -1,5 +1,10 @@
+import pytest
 from .utils import DummyLogger
-from formation.middleware import circuit_breaker
+from formation.middleware import (
+    circuit_breaker,
+    trigger_breaker_if,
+    BreakerTriggerException,
+)
 
 
 def malfunction(ctx):
@@ -10,6 +15,15 @@ def force_run(cb):
     try:
         cb({}, malfunction)
     except:  # noqa
+        pass
+
+
+def test_trigger():
+    t = trigger_breaker_if(lambda res: True)
+    try:
+        t({}, lambda _: {})
+        pytest.fail("should throw")
+    except BreakerTriggerException as ex:
         pass
 
 

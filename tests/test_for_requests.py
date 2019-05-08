@@ -44,3 +44,4 @@ def test_accept():
     sender(
         "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}
     )
+

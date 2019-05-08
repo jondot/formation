@@ -1,7 +1,13 @@
 from .utils import DummyLogger
 from toolz.curried import update_in, keyfilter
 from formation.for_requests import build_sender
-from formation.middleware import request_id, context, request_duration, request_logger
+from formation.middleware import (
+    request_id,
+    context,
+    request_duration,
+    request_logger,
+    context_logger,
+)
 import pytest
 import datetime
 
@@ -11,6 +17,7 @@ def get_test_stack(logger):
     return [
         request_id(idgen=lambda: "req-1"),
         context(getpid=lambda: "pid-1", gettid=lambda: "tid-1"),
+        context_logger(logger),
         request_duration(now=now),
         request_logger(logger),
     ]
