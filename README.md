@@ -28,6 +28,7 @@ def timeit(ctx, call):
 
 def to_requests(ctx):
     get(ctx['url'])
+    return ctx
 
 fancy_get = wrap(to_requests, middleware=[log, timeit])
 fancy_get({'url':'https://google.com'})
