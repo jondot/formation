@@ -64,6 +64,7 @@ class FormationHttpRequest(object):
     # these two are very stabby. a single default instance is shared among all attrs
     # objects. to assign new keys, update immutably -- use merge and re-assign
     headers = attrib(default={})
+    cookies = attrib(default={})
     params = attrib(default={})
 
     auth = attrib(default=None)
@@ -187,6 +188,7 @@ def requests_adapter(ctx):
     res = meth(
         req.url,
         headers=req.headers,
+        cookies=req.cookies,
         params=req.params,
         auth=req.auth,
         data=req.data,

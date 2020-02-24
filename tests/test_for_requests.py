@@ -45,3 +45,10 @@ def test_accept():
         "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}
     )
 
+
+@pytest.mark.vcr()
+def test_cookies():
+    sender = build_sender(middleware=[])
+    sender(
+        "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}, cookies={"clientSession": "session"}
+    )
