@@ -11,7 +11,8 @@ _REQ_PARENT_ID = "req.parent.id"
 _REQ_DURATION = "req.duration_us"
 
 
-def wrap(call, middleware=[]):
+def wrap(call, middleware=None):
+    middleware = middleware or []
     return reduce(
         lambda acc, m: lambda ctx: m(ctx, acc),
         reversed(middleware),
