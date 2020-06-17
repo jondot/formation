@@ -174,7 +174,8 @@ class Sender(object):
         return self.send("delete", path, **kwargs)
 
 
-def build(middleware=[], base_uri=None, response_as=None):
+def build(middleware=None, base_uri=None, response_as=None):
+    middleware = middleware or []
     return Sender(
         build_sender(
             middleware=middleware, base_uri=base_uri, default_response_as=response_as
