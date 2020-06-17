@@ -31,8 +31,9 @@ def trigger_breaker_if(trigger):
 
 
 def circuit_breaker(
-    logger, name, fail_max=5, reset_timeout=60, state_storage=None, exclude=[]
+    logger, name, fail_max=5, reset_timeout=60, state_storage=None, exclude=None
 ):
+    exclude = exclude or []
     breaker = pybreaker.CircuitBreaker(
         name=name,
         listeners=[breaker_logger(logger)],

@@ -138,12 +138,14 @@ def text_response(ctx):
     return res.text, res.status_code, res.headers
 
 
-def build_sender(middleware=[], base_uri=None, default_response_as=None):
+def build_sender(middleware=None, base_uri=None, default_response_as=None):
+    middleware = middleware or []
     wrapped = wrap(requests_adapter, middleware=middleware)
 
-    def sender(method, url, session_context={}, params={}, response_as=None, **kwargs):
+    def sender(method, url, session_context=None, params=None, response_as=None, **kwargs):
+        session_context = session_context or {}
+        params = params if isinstance(params, dict) else {} if not params else params.to_dict()
         resolved_response_as = response_as or default_response_as or _raw_response
-        params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         req = FormationHttpRequest(
             url=urljoin(base_uri, url), method=method, params=params, **kwargs
